@@ -4,13 +4,13 @@ public class App {
     public static void main(String[] args) {
         Graph graph = new Graph();
         
-        Vertex a = new Vertex();
-        Vertex b = new Vertex();
-        Vertex c = new Vertex();
-        Vertex d = new Vertex();
-        Vertex e = new Vertex();
-        Vertex f = new Vertex();
-        Vertex g = new Vertex();
+        Vertex a = new Vertex("A");
+        Vertex b = new Vertex("B");
+        Vertex c = new Vertex("C");
+        Vertex d = new Vertex("D");
+        Vertex e = new Vertex("E");
+        Vertex f = new Vertex("F");
+        Vertex g = new Vertex("G");
         
         graph.addVertex(a);
         graph.addVertex(b);
@@ -36,5 +36,8 @@ public class App {
         
         graph.addEdge(new Edge(e ,f));
         graph.addEdge(new Edge(e ,g));
+        
+        DijkstraData dijkstra = new DijkstraData(graph);
+        dijkstra.calculateMinimumPaths(a);
     }
 }

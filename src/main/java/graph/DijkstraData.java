@@ -9,7 +9,7 @@ public class DijkstraData {
     private Map<Vertex, Double> distancesFromOrigin;
     private Map<Vertex, Vertex> parents;
 
-    public void initialize(Graph graph) {
+    public DijkstraData(Graph graph) {
         this.graph = graph;
         this.flags = new HashMap<Vertex, Integer>();
         this.distancesFromOrigin = new HashMap<Vertex, Double>();
@@ -23,6 +23,9 @@ public class DijkstraData {
     }
     
     public Path calculateMinimumPaths(Vertex origin) {
+        
+        System.out.println(this.graph.getNeighbors(origin));
+        
         return null;
     }
 }
