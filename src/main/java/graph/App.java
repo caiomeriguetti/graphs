@@ -1,7 +1,7 @@
 package graph;
 
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Graph graph = new Graph();
         
         Vertex a = new Vertex("A");
@@ -20,24 +20,24 @@ public class App {
         graph.addVertex(f);
         graph.addVertex(g);
         
-        graph.addEdge(new Edge(a ,b));
-        graph.addEdge(new Edge(a ,g));
-        graph.addEdge(new Edge(a ,c));
+        graph.addEdge(new Edge(a, b, 1.0));
+        graph.addEdge(new Edge(a, g, 20.0));
+        graph.addEdge(new Edge(a, c, 20.0));
         
-        graph.addEdge(new Edge(b ,c));
-        graph.addEdge(new Edge(b ,d));
-        graph.addEdge(new Edge(b ,f));
+        graph.addEdge(new Edge(b, c, 1.0));
+        graph.addEdge(new Edge(b, d, 20.0));
+        graph.addEdge(new Edge(b, f, 20.0));
         
-        graph.addEdge(new Edge(c ,d));
-        graph.addEdge(new Edge(c ,g));
+        graph.addEdge(new Edge(c, d, 1.0));
+        graph.addEdge(new Edge(c, g, 1.0));
         
-        graph.addEdge(new Edge(d ,e));
-        graph.addEdge(new Edge(d ,g));
+        graph.addEdge(new Edge(d, e, 1.0));
+        graph.addEdge(new Edge(d, g, 20.0));
         
-        graph.addEdge(new Edge(e ,f));
-        graph.addEdge(new Edge(e ,g));
+        graph.addEdge(new Edge(e, f, 20.0));
+        graph.addEdge(new Edge(e, g, 1.0));
         
-        DijkstraData dijkstra = new DijkstraData(graph);
-        dijkstra.calculateMinimumPaths(a);
+        DijkstraPathFinder dijkstra = new DijkstraPathFinder(graph, a);
+        System.out.println(dijkstra.getPath(e));
     }
 }

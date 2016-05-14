@@ -39,4 +39,16 @@ public class Edge {
     public void setValue(double value) {
         this.value = value;
     }
+    
+    public Vertex getEnd(Vertex startVertex) throws Exception {
+    	if (startVertex == v1) {
+    		return v2;
+    	}
+    	
+    	if (startVertex == v2) {
+    		return v1;
+    	}
+    	
+    	throw new Exception("Vertex not in this edge");
+    }
 }
