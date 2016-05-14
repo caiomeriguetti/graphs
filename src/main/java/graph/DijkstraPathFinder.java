@@ -16,9 +16,17 @@ public class DijkstraPathFinder {
     public static int NO_PATHS_FOUND = 0;
     public static int PATH_FOUND = 1;
     public static int MINIMUM_PATH_FOUND = 2;
-
+    
+    public DijkstraPathFinder() {
+    	
+    }
+    
     public DijkstraPathFinder(Graph graph, Vertex origin) throws Exception {
-        this.graph = graph;
+        initialize(graph, origin);
+    }
+    
+    public void initialize(Graph graph, Vertex origin) throws Exception {
+    	this.graph = graph;
         this.origin = origin;
         this.calculateMinimumPaths(origin);
     }
