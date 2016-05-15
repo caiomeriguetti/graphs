@@ -51,4 +51,8 @@ public class Edge {
     	
     	throw new Exception("Vertex not in this edge");
     }
+    
+    public String toString() {
+    	return "(" + v1 + ", " + v2 + ")";
+    }
 }
