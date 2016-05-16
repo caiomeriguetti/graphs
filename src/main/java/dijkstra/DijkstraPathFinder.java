@@ -1,7 +1,7 @@
 package dijkstra;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -31,8 +31,8 @@ public class DijkstraPathFinder {
     public Path getPath(Vertex destination) {
     	Path path = new Path();
     	Vertex current = destination;
-    	List<Vertex> pathList = new ArrayList<Vertex>();
-    	List<Edge> edgeList = new ArrayList<Edge>();
+    	List<Vertex> pathList = new LinkedList<Vertex>();
+    	List<Edge> edgeList = new LinkedList<Edge>();
     	pathList.add(0, destination);
     	while (current != origin) {
     		Vertex pathVertex = this.parents.get(current);
@@ -57,8 +57,8 @@ public class DijkstraPathFinder {
 		this.distancesFromOrigin = new HashMap<Vertex, Double>();
 		this.parents = new HashMap<Vertex, Vertex>();
 		
-		List<Vertex> queue = new ArrayList<Vertex>();
-		List<Vertex> checkeds = new ArrayList<Vertex>();
+		List<Vertex> queue = new LinkedList<Vertex>();
+		List<Vertex> checkeds = new LinkedList<Vertex>();
 
 		for (Vertex v: this.graph.getVertices()) {
 		    this.distancesFromOrigin.put(v, Double.POSITIVE_INFINITY);

@@ -19,6 +19,17 @@ public class DijkstraPathFinderTest {
 	}
 	
 	@Test
+	public void testBigGraph() throws Exception {
+		SampleGraph graph = new SampleGraph(10000, 100);
+		long startTime = System.currentTimeMillis();
+		pathFinder.calculateMinimumPaths(graph, graph.getVertices().get(0));
+		Path path = pathFinder.getPath(graph.randomVertex(graph.getCircles().get(99)));
+		long endTime   = System.currentTimeMillis();
+		long totalTime = endTime - startTime;
+		System.out.println((totalTime/1000.0) + " - " + path.getVertices());
+	}
+	
+	@Test
 	public void testMinPathCalculation() throws Exception {
 		Graph graph1 = new Graph();
         Vertex a = new Vertex("A");

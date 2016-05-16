@@ -2,19 +2,19 @@ package graph;
 
 import java.io.File;
 import java.nio.file.Files;
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
 public class Graph {
-    private List<Vertex> vertices;
-    private List<Edge> edges;
-    private Map<Vertex, List<Edge>> edgesByVertex;
+    protected List<Vertex> vertices;
+    protected List<Edge> edges;
+    protected Map<Vertex, List<Edge>> edgesByVertex;
     
     public Graph() {
-        vertices = new ArrayList<Vertex>();
-        edges = new ArrayList<Edge>();
+        vertices = new LinkedList<Vertex>();
+        edges = new LinkedList<Edge>();
         edgesByVertex = new HashMap<Vertex, List<Edge>>();
     }
     
@@ -49,11 +49,11 @@ public class Graph {
         edges.add(e);
         
         if (!edgesByVertex.keySet().contains(e.getV1())) {
-        	edgesByVertex.put(e.getV1(), new ArrayList<Edge>());
+        	edgesByVertex.put(e.getV1(), new LinkedList<Edge>());
         }
         
         if (!edgesByVertex.keySet().contains(e.getV2())) {
-        	edgesByVertex.put(e.getV2(), new ArrayList<Edge>());
+        	edgesByVertex.put(e.getV2(), new LinkedList<Edge>());
         }
         
         edgesByVertex.get(e.getV1()).add(e);
@@ -70,7 +70,7 @@ public class Graph {
     
     public List<Vertex> getNeighbors(Vertex v) throws Exception {
     	List<Edge> edges = this.edgesByVertex.get(v);
-    	List<Vertex> neighbors = new ArrayList<Vertex>();
+    	List<Vertex> neighbors = new LinkedList<Vertex>();
     	for (Edge e: edges) {
     		neighbors.add(e.getEnd(v));
     	}
