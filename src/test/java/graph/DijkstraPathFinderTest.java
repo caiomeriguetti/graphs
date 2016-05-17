@@ -17,17 +17,43 @@ public class DijkstraPathFinderTest {
 	public void init() {
 		pathFinder = new DijkstraPathFinder();
 	}
+
+
+    @Test
+    public void testSplit() throws Exception {
+        SampleGraph graph = new SampleGraph(1000, 10);
+        GraphSplit s = new GraphSplit(graph, 20);
+        
+        Graph region1 = s.getRegions().get(0);
+        Graph region2 = s.getRegions().get(3);
+        
+        int randomIndex1 = new Double((region1.getVertices().size() - 1) * Math.random()).intValue();
+        int randomIndex2 = new Double((region2.getVertices().size() - 1) * Math.random()).intValue();
+        
+        Vertex origin = region1.getVertices().get(randomIndex1);
+        Vertex destination = s.getRegions().get(1).getVertices().get(randomIndex2);
+        
+        Path fastCalculationPath = s.getPath(origin, destination);
+        
+        DijkstraPathFinder regularPathFinder = new DijkstraPathFinder(graph, origin);
+        Path slowCalculationPath = regularPathFinder.getPath(destination);
+        
+        System.out.println(fastCalculationPath.getVertices());
+        System.out.println(fastCalculationPath.getCost());
+        System.out.println(slowCalculationPath.getVertices());
+        System.out.println(slowCalculationPath.getCost());
+    }
 	
-	@Test
-	public void testBigGraph() throws Exception {
-		SampleGraph graph = new SampleGraph(10000, 100);
-		long startTime = System.currentTimeMillis();
-		pathFinder.calculateMinimumPaths(graph, graph.getVertices().get(0));
-		Path path = pathFinder.getPath(graph.randomVertex(graph.getCircles().get(99)));
-		long endTime   = System.currentTimeMillis();
-		long totalTime = endTime - startTime;
-		System.out.println((totalTime/1000.0) + " - " + path.getVertices());
-	}
+    @Test
+    public void testBigGraph() throws Exception {
+        SampleGraph graph = new SampleGraph(10000, 100);
+        long startTime = System.currentTimeMillis();
+        pathFinder.calculateMinimumPaths(graph, graph.getVertices().get(0));
+        Path path = pathFinder.getPath(graph.randomVertex(graph.getCircles().get(99)));
+        long endTime   = System.currentTimeMillis();
+        long totalTime = endTime - startTime;
+        System.out.println((totalTime/1000.0) + " - " + path.getVertices());
+    }
 	
 	@Test
 	public void testMinPathCalculation() throws Exception {
