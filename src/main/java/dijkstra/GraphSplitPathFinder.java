@@ -1,22 +1,26 @@
-package graph;
+package dijkstra;
 
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import dijkstra.DijkstraPathFinder;
+import graph.Edge;
+import graph.Graph;
+import graph.Path;
+import graph.Vertex;
+import graph.VertexWithEdge;
 
-public class GraphSplit {
+public class GraphSplitPathFinder {
     Graph graph;
-    private Map<Vertex, Boolean> alreadyUsed = new HashMap<>();
+    private List<Vertex> alreadyInsideRegion = new LinkedList<>();
     private Vertex currentStart;
     private List<Graph> regions = new LinkedList<>();
     private HashMap<Graph, List<VertexWithEdge>> outsideConnections = new HashMap<>();
     private HashMap<VertexWithEdge, Graph> connectionToRegion = new HashMap<>();
     private int maxRegionSize;
     
-    public GraphSplit(Graph graph, int maxRegionSize) throws Exception {
+    public GraphSplitPathFinder(Graph graph, int maxRegionSize) throws Exception {
         this.graph = graph;
         this.maxRegionSize = maxRegionSize;
         
@@ -28,7 +32,9 @@ public class GraphSplit {
         }
         
         //mapping outside connections of each region to the destinationRegion
+        int sum  = 0;
         for (Graph region: regions) {
+        	sum += region.getVertices().size();
             List<VertexWithEdge> connections = outsideConnections.get(region);
             
             for (VertexWithEdge connection: connections) {
@@ -42,6 +48,7 @@ public class GraphSplit {
                 }
             }
         }
+//        System.out.println("Total: " + sum);
         
     }
     
@@ -95,9 +102,10 @@ public class GraphSplit {
             }
             
             return resultPath;
+        } else {
+        	throw new Exception("No direct neighbor regions");
         }
-        
-        return null;
+
     }
     
     public Graph getRegion(Vertex v) {
@@ -121,44 +129,35 @@ public class GraphSplit {
     public void split(Vertex start) throws Exception {
         
         List<Vertex> vertices = new LinkedList<>();
-        
-        List<Edge> edges = new LinkedList<>();
         List<VertexWithEdge> queue = new LinkedList<>();
-        queue.add(new VertexWithEdge(start));
-        Graph region = new Graph();
-        while (vertices.size() < maxRegionSize && queue.size() > 0) {
-            
-            VertexWithEdge v = queue.remove(0);
-
-            if (vertices.contains(v)) {
-                continue;
-            }
-            
-            if (!alreadyUsed.keySet().contains(v.getVertex())) {
-                alreadyUsed.put(v.getVertex(), true);
-            }
-            
-            vertices.add(v.getVertex());
-            region.addVertex(v.getVertex());
-            
-            if (v.getEdge() != null) {
-                edges.add(v.getEdge());
-                region.addEdge(v.getEdge());
-            }
-            
-            //visiting neighbors
-            List<Edge> neighborEdges = this.graph.getEdges(v.getVertex());
-            
-            for (Edge e: neighborEdges) {
-                Vertex neighbor = e.getEnd(v.getVertex());
-                if (vertices.contains(neighbor) || alreadyUsed.keySet().contains(neighbor)) {
-                    continue;
-                }
-                queue.add(new VertexWithEdge(neighbor, e));
-            }
-            
-        }
         
+        queue.add(new VertexWithEdge(start));
+        
+        Graph region = new Graph("Region " + regions.size());
+        
+        while (queue.size() > 0) {
+        	VertexWithEdge v = queue.remove(0);
+        	
+        	vertices.add(v.getVertex());
+        	if (v.getEdge() != null) {
+        		region.addEdge(v.getEdge());
+        	}
+            region.addVertex(v.getVertex());
+            alreadyInsideRegion.add(v.getVertex());
+            
+            if (vertices.size() < maxRegionSize) {
+	        	//visiting neighbors
+	            List<Edge> neighborEdges = this.graph.getEdges(v.getVertex());
+	            for (Edge e: neighborEdges) {
+	                Vertex neighbor = e.getEnd(v.getVertex());
+	                VertexWithEdge ve = new VertexWithEdge(neighbor, e);
+	                if (!vertices.contains(neighbor) && !alreadyInsideRegion.contains(neighbor)) {
+	                	queue.add(ve);
+	                }
+	            }
+            }
+        }
+
         regions.add(region);
         
         List<VertexWithEdge> connections = new LinkedList<>();
@@ -179,10 +178,16 @@ public class GraphSplit {
         for (VertexWithEdge v: connections) {
             Vertex outsideVertex = v.getEdge().getEnd(v.getVertex());
             
-            if (!this.alreadyUsed.keySet().contains(outsideVertex)) {
+            if (!this.alreadyInsideRegion.contains(outsideVertex)) {
                 currentStart = outsideVertex;
                 break;
             }
         }
+        
+//        System.out.println(region.getVertices() + " - " + region.getVertices().size() + " / " + this.graph.getVertices().size());
+//        System.out.println(region.getEdges());
+//        System.out.println(connections);
+//        System.out.println(currentStart);
+//        System.out.println("-----------------------");
     }
 }

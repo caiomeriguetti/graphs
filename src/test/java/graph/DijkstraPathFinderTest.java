@@ -1,14 +1,12 @@
 package graph;
 
-import static org.junit.Assert.assertEquals;
-
-import java.util.List;
+import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import dijkstra.DijkstraPathFinder;
-import junit.framework.Assert;
+import dijkstra.GraphSplitPathFinder;
 
 public class DijkstraPathFinderTest {
 	protected DijkstraPathFinder pathFinder;
@@ -17,15 +15,14 @@ public class DijkstraPathFinderTest {
 	public void init() {
 		pathFinder = new DijkstraPathFinder();
 	}
-
-
-    @Test
-    public void testSplit() throws Exception {
-        SampleGraph graph = new SampleGraph(1000, 10);
-        GraphSplit s = new GraphSplit(graph, 20);
-        
+	
+	@Test
+    public void testGraphSplit() throws Exception {
+		SampleGraph graph = new SampleGraph(100000, 20);
+		long fastStartTime = System.currentTimeMillis();
+        GraphSplitPathFinder s = new GraphSplitPathFinder(graph, 100);
         Graph region1 = s.getRegions().get(0);
-        Graph region2 = s.getRegions().get(3);
+        Graph region2 = s.getRegions().get(7);
         
         int randomIndex1 = new Double((region1.getVertices().size() - 1) * Math.random()).intValue();
         int randomIndex2 = new Double((region2.getVertices().size() - 1) * Math.random()).intValue();
@@ -34,13 +31,53 @@ public class DijkstraPathFinderTest {
         Vertex destination = s.getRegions().get(1).getVertices().get(randomIndex2);
         
         Path fastCalculationPath = s.getPath(origin, destination);
+        long fastEndTime   = System.currentTimeMillis();
+        long fastTotalTime = fastEndTime - fastStartTime;
         
+        System.out.println("-------------------------");
+        System.out.println("Fast Time: " + (fastTotalTime/1000.0));
+        System.out.println("Valid Path? " + graph.isValidPath(fastCalculationPath));
+        System.out.println(fastCalculationPath.getVertices());
+        System.out.println(fastCalculationPath.getEdges());
+        System.out.println(fastCalculationPath.getCost());
+        
+        assertTrue(graph.isValidPath(fastCalculationPath));
+	}
+	
+    @Test
+    public void testCompareDijkstraWithGraphSplit() throws Exception {
+        SampleGraph graph = new SampleGraph(10000, 20);
+        
+        long fastStartTime = System.currentTimeMillis();
+        GraphSplitPathFinder s = new GraphSplitPathFinder(graph, 10);
+        Graph region1 = s.getRegions().get(3);
+        Graph region2 = s.getRegions().get(7);
+        int randomIndex1 = new Double((region1.getVertices().size() - 1) * Math.random()).intValue();
+        int randomIndex2 = new Double((region2.getVertices().size() - 1) * Math.random()).intValue();
+        Vertex origin = region1.getVertices().get(randomIndex1);
+        Vertex destination = s.getRegions().get(1).getVertices().get(randomIndex2);
+        Path fastCalculationPath = s.getPath(origin, destination);
+        long fastEndTime   = System.currentTimeMillis();
+        long fastTotalTime = fastEndTime - fastStartTime;
+        
+        System.out.println("-------------------------");
+        System.out.println("Fast Time: " + (fastTotalTime/1000.0));
+        System.out.println("Valid Path? " + graph.isValidPath(fastCalculationPath));
+        System.out.println(fastCalculationPath.getVertices());
+        System.out.println(fastCalculationPath.getEdges());
+        System.out.println(fastCalculationPath.getCost());
+        
+        long slowStartTime = System.currentTimeMillis();
         DijkstraPathFinder regularPathFinder = new DijkstraPathFinder(graph, origin);
         Path slowCalculationPath = regularPathFinder.getPath(destination);
+        long slowEndTime   = System.currentTimeMillis();
+        long slowTotalTime = slowEndTime - slowStartTime;
         
-        System.out.println(fastCalculationPath.getVertices());
-        System.out.println(fastCalculationPath.getCost());
+        System.out.println("-------------------------");
+        System.out.println("Slow Time: " + (slowTotalTime/1000.0));
+        System.out.println("Valid Path? " + graph.isValidPath(slowCalculationPath));
         System.out.println(slowCalculationPath.getVertices());
+        System.out.println(slowCalculationPath.getEdges());
         System.out.println(slowCalculationPath.getCost());
     }
 	

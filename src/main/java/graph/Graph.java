@@ -11,11 +11,32 @@ public class Graph {
     protected List<Vertex> vertices;
     protected List<Edge> edges;
     protected Map<Vertex, List<Edge>> edgesByVertex;
+    private String name;
     
     public Graph() {
+    	this("");
+    }
+    public Graph(String name) {
         vertices = new LinkedList<Vertex>();
         edges = new LinkedList<Edge>();
         edgesByVertex = new HashMap<Vertex, List<Edge>>();
+        this.name = name;
+    }
+    
+    public boolean isValidPath(Path path) {
+    	List<Vertex> pathVertices = path.getVertices();
+    	
+    	for (int i = 1; i < pathVertices.size(); i++) {
+    		Vertex v1 = pathVertices.get(i-1);
+    		Vertex v2 = pathVertices.get(i);
+    		Edge e = getEdge(v1, v2);
+    		
+    		if (e == null) {
+    			return false;
+    		}
+    	}
+    	
+    	return true;
     }
     
     public void loadFromFile(String path) throws Exception {
@@ -93,5 +114,9 @@ public class Graph {
     
     public List<Edge> getEdges(Vertex v) {
         return this.edgesByVertex.get(v);
+    }
+    
+    public String toString () {
+		return name;
     }
 }
