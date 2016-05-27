@@ -19,6 +19,7 @@ public class DijkstraPathFinder {
     
     public static int NO_PATHS_FOUND = 0;
     public static int PATH_FOUND = 1;
+    public static int MINIMUM_PATH_FOUND = 2;
     
     public DijkstraPathFinder() {
     	
@@ -56,48 +57,54 @@ public class DijkstraPathFinder {
 		this.flags = new HashMap<Vertex, Integer>();
 		this.distancesFromOrigin = new HashMap<Vertex, Double>();
 		this.parents = new HashMap<Vertex, Vertex>();
-		
-		List<Vertex> queue = new LinkedList<Vertex>();
-		List<Vertex> checkeds = new LinkedList<Vertex>();
 
 		for (Vertex v: this.graph.getVertices()) {
 		    this.distancesFromOrigin.put(v, Double.POSITIVE_INFINITY);
 		    this.flags.put(v, NO_PATHS_FOUND);
 		    this.parents.put(v, null);
-		    queue.add(v);
 		}
 		
 		this.distancesFromOrigin.put(origin, 0.0);
+		
+		Vertex current = origin;
 
-		while (queue.size() > 0) {
-			Vertex current = queue.get(0);
-			for (Vertex v: queue) {
-				if (distancesFromOrigin.get(v) < distancesFromOrigin.get(current)) {
-					current = v;
-				}
-			}
+		while (current != null) {
+			flags.put(current, MINIMUM_PATH_FOUND);
 			
-			queue.remove(current);
-			checkeds.add(current);
-
-			for(Edge e: this.graph.getEdges(current)) {
+			for(Edge e: graph.getEdges(current)) {
 	        	Vertex end = e.getEnd(current);
 	        	
-	        	if(!checkeds.contains(current)) {
-	        		queue.add(end);
+	        	if (flags.get(end) == MINIMUM_PATH_FOUND) {
+	        		continue;
 	        	}
 	        	
 	        	double currentPathSize = this.distancesFromOrigin.get(current) + e.getValue();
 	        	
-	        	if (this.flags.get(end) == NO_PATHS_FOUND) {
-	        		this.flags.put(end, PATH_FOUND);
-	        		this.distancesFromOrigin.put(end, currentPathSize);
-	        		this.parents.put(end, current);
-	        	} else if (this.flags.get(end) == PATH_FOUND && currentPathSize < this.distancesFromOrigin.get(end)) {
-	        		this.distancesFromOrigin.put(end, currentPathSize);
-	        		this.parents.put(end, current);
+	        	if (flags.get(end) == NO_PATHS_FOUND) {
+	        		flags.put(end, PATH_FOUND);
+	        		distancesFromOrigin.put(end, currentPathSize);
+	        		parents.put(end, current);
+	        	} else if (flags.get(end) == PATH_FOUND && currentPathSize < distancesFromOrigin.get(end)) {
+	        		distancesFromOrigin.put(end, currentPathSize);
+	        		parents.put(end, current);
 	        	}
 	        }
+			
+			current = null;
+			
+			for (Vertex v: distancesFromOrigin.keySet()) {
+				if (flags.get(v) == MINIMUM_PATH_FOUND) {
+					continue;
+				}
+				
+				if (current == null) {
+					current = v;
+				} else {
+					if (distancesFromOrigin.get(v) < distancesFromOrigin.get(current)) {
+						current = v;
+					}
+				}
+			}
 		}
     }
 }
