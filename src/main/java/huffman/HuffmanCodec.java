@@ -8,18 +8,33 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import dijkstra.DijkstraPathFinder;
 import graph.Edge;
-import graph.Graph;
-import graph.Path;
-import graph.Vertex;
+import graph.Tree;
+import graph.TreeVertex;
 
 public class HuffmanCodec {
 	
+	private Comparator<TreeVertex> sortComparator = new Comparator<TreeVertex>() {
+	    @Override
+	    public int compare(TreeVertex v1, TreeVertex v2) {
+	    	
+	    	Integer value1 = (Integer)v1.getValue();
+	    	Integer value2 = (Integer)v2.getValue();
+	    	
+	        if (value1 > value2) return 1;
+	        if (value1 < value2) return -1;
+	        
+	        return 0;
+	    }
+	};
+	
 	public EncodedText encodeText(String text) throws Exception {
-		HashMap<String, Integer> ocurrences = new HashMap<>();
+		
+		//calculating frequencies
+		HashMap<Character, Integer> ocurrences = new HashMap<>();
+		
 		for (int i = 0; i < text.length(); i++) {
-			String charAt = Character.toString(text.charAt(i));
+			Character charAt = text.charAt(i);
 			
 			if (!ocurrences.keySet().contains(charAt)) {
 				ocurrences.put(charAt, 1);
@@ -28,107 +43,99 @@ public class HuffmanCodec {
 			}
 		}
 		
-		Graph graph = new Graph();
-		List<Vertex> currentList = new ArrayList<Vertex>();
-		Map<String, Vertex> charToVertex = new HashMap<>();
-		Map<String, String> charToCode = new HashMap<>();
-		Map<String, String> codeToChar = new HashMap<>();
+		//creating binary tree
+		Tree tree = new Tree();
+		List<TreeVertex> currentList = new ArrayList<TreeVertex>();
+		Map<Character, TreeVertex> charToVertex = new HashMap<>();
 		
-		for(Map.Entry<String,Integer> entry : ocurrences.entrySet()) {
-		  String key = entry.getKey();
+		for(Map.Entry<Character, Integer> entry : ocurrences.entrySet()) {
+		  Character key = entry.getKey();
 		  Integer value = entry.getValue();
-		  Vertex v = new Vertex(key);
+		  TreeVertex v = new TreeVertex(key);
 		  v.setValue(value);
 		  currentList.add(v);
-		  graph.addVertex(v);
+		  tree.addVertex(v);
 		  charToVertex.put(key, v);
 		}
 		
-		Vertex root = null;
+		TreeVertex root = null;
+		
 		while(currentList.size() > 1) {
 			sort(currentList);
-			Vertex first = currentList.remove(0);
-			Vertex second = currentList.remove(0);
+			TreeVertex first = currentList.remove(0);
+			TreeVertex second = currentList.remove(0);
 			
 			Integer nodeValue = (Integer)first.getValue() + (Integer)second.getValue();
-			Vertex mergeNode = new Vertex(first.getName() + second.getName());
+			TreeVertex mergeNode = new TreeVertex();
 			mergeNode.setValue(nodeValue);
-			Edge e1 = new Edge(mergeNode, first, 0);
-			Edge e2 = new Edge(mergeNode, second, 1);
-			graph.addVertex(mergeNode);
-			graph.addEdge(e1);
-			graph.addEdge(e2);
+			Edge e1 = new Edge(mergeNode, first, false);
+			Edge e2 = new Edge(mergeNode, second, true);
+			first.setParent(mergeNode);
+			second.setParent(mergeNode);
+			tree.addVertex(mergeNode);
+			tree.addEdge(e1);
+			tree.addEdge(e2);
 			currentList.add(mergeNode);
 			root = mergeNode;
 		}
 		
-		DijkstraPathFinder finder = new DijkstraPathFinder(graph, root);
+		tree.setRoot(root);
 		
-		for(Map.Entry<String,Vertex> entry : charToVertex.entrySet()) {
-			String key = entry.getKey();
-			Vertex vertex = entry.getValue();
-			
-			Path path = finder.getPath(vertex);
-			String code = "";
-			for(Edge e: path.getEdges()) {
-				code += new Double(e.getValue()).intValue();
-			}
-			charToCode.put(key, code);
-			codeToChar.put(code, key);
-		}
+		//encoding
 
 		BitSet encoded = new BitSet();
 		int bitIndex = 0;
+		
 		for (int i = 0; i < text.length(); i++) {
-			String charAt = Character.toString(text.charAt(i));
-			String code = charToCode.get(charAt);
-			for (int t = 0; t < code.length(); t++) {
-				encoded.set(bitIndex, code.charAt(t) == '1');
+			Character chr = text.charAt(i);
+
+			TreeVertex vertex = charToVertex.get(chr);
+			List<Boolean> code = new ArrayList<Boolean>();
+			
+			while (vertex != root) {
+				Edge e = tree.getEdge(vertex, vertex.getParent());
+				boolean edgeValue = (boolean) e.getValue();
+				code.add(0, edgeValue);
+				vertex = vertex.getParent();
+			}
+			
+			for (int t = 0; t < code.size(); t++) {
+				encoded.set(bitIndex, code.get(t));
 				bitIndex++;
 			}
 		}
 
-		return new EncodedText(encoded, codeToChar);
+		return new EncodedText(encoded, tree);
 	}
 	
-	public String decode(EncodedText encoded) {
+	public String decode(EncodedText encoded) throws Exception {
 		BitSet encodedData = encoded.getEncodedData();
-		String buffer = "";
 		String result = "";
+		Tree tree = encoded.getTree();
+		TreeVertex currentNode = tree.getRoot();
 		for(int i = 0; i <= encodedData.length(); i++){
-			if (encodedData.get(i) == true) {
-				buffer += "1";
-			} else {
-				buffer += "0";
+			boolean value = encodedData.get(i);
+			
+			List<Edge> edges = tree.getChildEdges(currentNode);
+			Edge selectedEdge = edges.get(0);
+			
+			if ((boolean)selectedEdge.getValue() != value) {
+				selectedEdge = edges.get(1);
 			}
 			
-			if (encoded.getCodes().containsKey(buffer)) {
-				result += encoded.getCodes().get(buffer);
-				buffer = "";
+			currentNode = (TreeVertex)selectedEdge.getEnd(currentNode);
+			
+			if (tree.isLeaf(currentNode)) {
+				result += currentNode.getName();
+				currentNode = tree.getRoot();
 			}
 		}
 		
 		return result;
 	}
 	
-	private void sort(List<Vertex> list) {
-		Collections.sort(list, new Comparator<Vertex>() {
-		    @Override
-		    public int compare(Vertex v1, Vertex v2) {
-		    	
-		    	Integer value1 = (Integer)v1.getValue();
-		    	Integer value2 = (Integer)v2.getValue();
-		    	
-		        if (value1 > value2) return 1;
-		        if (value1 < value2) return -1;
-		        
-		        return 0;
-		    }
-		});
-	}
-	
-	public String decodeText(Byte[] bytes) {
-		return null;
+	private void sort(List<TreeVertex> list) {
+		Collections.sort(list, sortComparator);
 	}
 	
 }

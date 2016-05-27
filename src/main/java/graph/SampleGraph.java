@@ -28,7 +28,7 @@ public class SampleGraph extends Graph {
 				Vertex v = new Vertex(verticeId+"");
 				
 				if (prev != null) {
-					addEdge(new Edge(v, prev, new Double(Math.random()*100).intValue()));
+					addEdge(new Edge(v, prev, new Double(Math.random()*100)));
 				}
 				
 				prev = v;
@@ -47,7 +47,7 @@ public class SampleGraph extends Graph {
 				List<Vertex> circle = circles.get(j);
 				Vertex v = circle.get(i);
 				if (prev != null) {
-					addEdge(new Edge(v, prev, new Double(Math.random()*100).intValue()));
+					addEdge(new Edge(v, prev, new Double(Math.random()*100)));
 				}
 				prev = v;
 			}

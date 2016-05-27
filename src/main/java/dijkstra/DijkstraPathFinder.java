@@ -78,7 +78,7 @@ public class DijkstraPathFinder {
 	        		continue;
 	        	}
 	        	
-	        	double currentPathSize = this.distancesFromOrigin.get(current) + e.getValue();
+	        	double currentPathSize = distancesFromOrigin.get(current) + (double)e.getValue();
 	        	
 	        	if (flags.get(end) == NO_PATHS_FOUND) {
 	        		flags.put(end, PATH_FOUND);

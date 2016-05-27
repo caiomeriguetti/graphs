@@ -1,17 +1,21 @@
 package graph;
 
 public class Vertex {
-    private String name;
+    private Object name;
     private Object value;
-    public Vertex(String name) {
+    
+    public Vertex() {
+    }
+    
+    public Vertex(Object name) {
     	this.name = name;
     }
     
-    public String getName() {
+    public Object getName() {
 		return name;
 	}
 
-	public void setName(String name) {
+	public void setName(Object name) {
 		this.name = name;
 	}
 
@@ -24,6 +28,6 @@ public class Vertex {
     }
 
     public String toString() {
-        return this.name+((value !=null)?value :"");
+        return this.name.toString()+((value !=null)?value :"");
     }
 }

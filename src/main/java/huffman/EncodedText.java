@@ -1,12 +1,12 @@
 package huffman;
 
 import java.util.BitSet;
-import java.util.HashMap;
-import java.util.Map;
+
+import graph.Tree;
 
 public class EncodedText {
 	private BitSet encodedData;
-	private Map<String, String> codes;
+	private Tree tree;
 	
 	public BitSet getEncodedData() {
 		return encodedData;
@@ -16,16 +16,16 @@ public class EncodedText {
 		this.encodedData = encodedData;
 	}
 
-	public Map<String, String> getCodes() {
-		return codes;
-	}
-
-	public void setCodes(HashMap<String, String> codes) {
-		this.codes = codes;
-	}
-
-	public EncodedText(BitSet encodedData, Map<String, String> codes) {
+	public EncodedText(BitSet encodedData, Tree tree) {
 		this.encodedData = encodedData;
-		this.codes = codes;
+		this.tree = tree;
+	}
+
+	public Tree getTree() {
+		return tree;
+	}
+
+	public void setTree(Tree tree) {
+		this.tree = tree;
 	}
 }

@@ -4,13 +4,13 @@ public class Edge {
     
     private Vertex v1;
     private Vertex v2;
-    private double value;
+    private Object value;
 
     public Edge(Vertex v1, Vertex v2) {
-        this(v1, v2, 1);
+        this(v1, v2, 1.0);
     }
 
-    public Edge(Vertex v1, Vertex v2, double value) {
+    public Edge(Vertex v1, Vertex v2, Object value) {
         this.v1 = v1;
         this.v2 = v2;
         this.value = value;
@@ -32,11 +32,11 @@ public class Edge {
         this.v2 = v2;
     }
 
-    public double getValue() {
+    public Object getValue() {
         return value;
     }
 
-    public void setValue(double value) {
+    public void setValue(Object value) {
         this.value = value;
     }
     

@@ -23,6 +23,10 @@ public class Graph {
         this.name = name;
     }
     
+    public boolean isLeaf(Vertex v) {
+    	return getEdges(v).size() == 1;
+    }
+    
     public boolean isValidPath(Path path) {
     	List<Vertex> pathVertices = path.getVertices();
     	

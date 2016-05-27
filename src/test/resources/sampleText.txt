@@ -1,0 +1,1528 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+					
+<base href="http://portal.faesa.br/" />
+
+<!-- OPENGRAPH -->
+
+<meta property="og:type" content="website"/>
+
+
+<meta property="og:title" content="Faesa"/>
+
+<meta property="og:site_name" content="Faculdade Faesa"/>
+
+<meta property="og:image" content="http://portal.faesa.br/lay/og_image.png"/>
+
+<meta property="og:type" content="Instituição de Ensino"/>
+<!-- /OPENGRAPH -->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<meta name="keywords" content="faesa,instituição de ensino, curso superior, faculdade, superior de tecnologia, tecnologo, graduação, pós graduação, extensão, curso deextensão, ensino superior"/>
+	
+	<meta name="description" content="A FAESA é uma instituição de ensino superior com sede em Vitória no Espírito Santo."/>
+	
+	<title>FAESA - Curso Superior, Tecnólogo, Pós-Graduação, Cursos de Extensão</title>
+
+<link rel="stylesheet" type="text/css" href="http://portal.faesa.br/css/bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="http://portal.faesa.br/css/bootstrap-select.css"/>
+<link rel="stylesheet" type="text/css" href="http://portal.faesa.br/css/style.css"/>
+<link rel="stylesheet" type="text/css" href="http://portal.faesa.br/css/tour.css"/>
+
+
+<script src="http://portal.faesa.br/js/jquery-1.9.1.min.js"></script>
+<script src="http://portal.faesa.br/js/bootstrap.js"></script>
+<script src="http://portal.faesa.br/js/bootstrap-dropdown.js"></script>
+
+<script src="http://portal.faesa.br/js/hover-dropdown.js"></script>
+
+<script src="http://portal.faesa.br/js/bootstrap-select.js"></script>
+<script src="http://portal.faesa.br/js/mootools-core-1.4.5-full-compat.js"></script>
+<script src="http://portal.faesa.br/js/set/packager.js"></script>
+<script src="http://portal.faesa.br/js/placeholder.js"></script>
+
+<link href="http://portal.faesa.br/favicon.ico" type="image/x-icon" rel="shortcut icon">
+<link href="http://portal.faesa.br/favicon.ico" type="image/x-icon" rel="icon">
+
+	<script>
+						$(function(){
+							
+							$('#btpos').click(function(){
+								
+								
+								window.open('http://pos.faesa.br');
+								
+								return false;
+								
+							});
+							
+						})
+						
+					</script>
+
+<script type="text/javascript">
+	$(document).ready(function(e) {
+	   
+	   	   $('.dropdown-toggle').dropdownHover();
+	   	   
+	   // Select Custom
+	    $('select').selectpicker();	
+		$('.dropdown-toggle').dropdown();
+	  // Alt Elements
+	   $('.alt').tooltip();
+	   $('.t').button();
+	   
+	   $('#myModal').hide();
+
+    });
+    
+   	var HOST='portal.faesa.br';
+   	
+   	function abre_ouvidoria(){
+   		
+   		var left = (screen.width/2)-(650/2);
+  		var top = (screen.height/2)-(781/2);
+   		
+   		var janela=window.open('http://portal.faesa.br/fale/ouvidoria', 'Janela' , 'width=650 , height=781 , top='+top+', left='+left );
+   		
+   		
+   	}
+   	
+   	function preloader_geral(enabled,oncomplete){
+   		
+   		$('.preloader-all').stop();
+   		
+   		if(enabled==undefined) enabled=true;
+   		
+   		if(enabled){
+   			$('.preloader-all').animate({'margin-top':0},0,oncomplete);
+   		}else if(enabled==false){
+   			$('.preloader-all').animate({'margin-top':-80},0,oncomplete);
+   		}
+   	}
+   	
+   	$(function(){
+   		preloader_geral(false);
+   	})
+
+    
+</script>
+
+
+<script src="http://portal.faesa.br/js/inicializacao.js"></script>
+
+<script type="text/javascript" src="/js/jquery.cycle.all.js"></script><script type="text/javascript" src="/js/DestaqueApp.js"></script><script type="text/javascript" src="/js/set/TimelineMonitor.js"></script><script type="text/javascript" src="/js/UltimasNoticiasBox.js"></script>
+
+</head>
+
+<body>
+	
+		
+	<div class="preloader-all" style="position:fixed;margin-top:-80px"><span class="preloader"><img src="img/preloader.gif" width="30" height="30" title="Aguarde..." /></span></div>
+	<div id="fb-root"></div>
+	<script>
+		
+	  // Load the SDK asynchronously
+	  // (function(d){
+	     // var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+	     // if (d.getElementById(id)) {return;}
+	     // js = d.createElement('script'); js.id = id; js.async = true;
+	     // js.src = "//connect.facebook.net/en_US/all.js";
+	     // ref.parentNode.insertBefore(js, ref);
+	   // }(document));
+// 	   
+	   
+	  </script>
+	   
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=319282351535632";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+	<input type='hidden' id='webroot' value='http://portal.faesa.br/' />
+
+<div id="myModal" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: none;">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3 style="border: none;">Enviar para um amigo</h3>
+	</div>
+	<div class="modal-body">
+		
+		<form class='email_amigo'>
+			<p>Preencha o formulário abaixo e envie para um amigo.</p>
+			<div class="form-modal">
+				    <div class="input-prepend">
+				    	<span class="b-g-tl"></span><span class="b-g-bl"></span><span class="b-g-tr"></span><span class="b-g-br"></span>
+				    	<input type="text" name='nome' class="input-medium field-amigo" placeholder="Seu Nome">
+				    </div>
+				    <div class="input-prepend">
+				    	<span class="b-g-tl"></span><span class="b-g-bl"></span><span class="b-g-tr"></span><span class="b-g-br"></span>
+				    	<input type="text" name='email' class="input-medium field-amigo" placeholder="Seu e-mail">
+				    </div>
+				    <div class="input-prepend">
+				    	<span class="b-g-tl"></span><span class="b-g-bl"></span><span class="b-g-tr"></span><span class="b-g-br"></span>
+				    	<input type="text" name='nome-amigo' class="input-medium field-amigo" placeholder="Nome do Amigo">
+				    </div>
+				    <div class="input-prepend">
+				    	<span class="b-g-tl"></span><span class="b-g-bl"></span><span class="b-g-tr"></span><span class="b-g-br"></span>
+				    	<input type="text" name='email-amigo' class="input-medium field-amigo" placeholder="Seu e-mail">
+				    </div>
+			</div>
+			
+		</form>
+		
+		<div class='catacumba'>
+			
+		</div>
+		
+		</div>
+		<div class="modal-footer bg">
+			<div class="pull-right">
+				<div class='bt-close' style="display: table;position: relative;"><span class="b-g-tl"></span><span class="b-g-bl"></span><span class="b-g-tr"></span><span class="b-g-br"></span><button class="btn general btn-amigo" data-dismiss="modal" aria-hidden="true">Fechar</button></div>
+				<div class='bt-done' style="display: table;position: relative;"><span class="b-g-tl"></span><span class="b-g-bl"></span><span class="b-g-tr"></span><span class="b-g-br"></span><button class="btn general btn-amigo">Enviar</button></div>
+			</div>
+		</div>
+		
+		<div id='preloader_amigo' style='display:none'>
+			<div style='width:50px;height:50px;background:#ff0000'>
+				
+			</div>
+		</div>
+	
+</div>
+
+
+<!-- MENU PRIMÁRIO -->
+<div class="container-fluid bg-menu-primary">
+	<div class="container" style="position: relative;">
+		
+		
+		<script>
+			
+			function starttour(){
+				$($('#tour-elements').children()[0]).show();
+			}
+			
+			$(function(){
+				
+				$('#tour-elements button.bt-next').click(function(){
+					var nextindex=$(this).parent().parent().index()+1;
+					
+					var nextelement=$($('#tour-elements').children()[nextindex]);
+					
+					if(nextelement){
+						$(this).parents('.container-tour').hide();
+						nextelement.show();
+						$('html, body').stop();
+					    $('html, body').animate({
+					        scrollTop: nextelement.offset().top-100
+					    }, 500);
+					}
+				});
+				
+				$('#tour-elements button.bt-close , #tour-elements .close-tour').click(function(){
+					$(this).parents('.container-tour').hide();
+				});
+
+			});
+			
+		</script>
+		
+		<!-- TOUR ====================== -->
+		<div id='tour-elements'>
+			
+			<!-- Menu Principal -->
+			<div class="container-tour" style="width: 500px; top: 50px; left: 50%;margin-left: -250px;">
+				<div class="container-tour-inner">
+					<a href="javascript:" class="close-tour">×</a>
+					<span class="seta top"></span>
+					<h6>Menu Principal</h6>
+					<p>Este é o menu principal. Ele dá acesso a todo o conteúdo do site. Aqui estão todas as informações que você procura sobre a nossa instituição.</p>
+					<br />
+					<button class="btn bt-close">Fechar</button>&nbsp;&nbsp;<button class="btn btn-primary bt-next">Próximo &nbsp;<i class="icon-arrow-right icon-white"></i></button>
+					
+				</div>
+			</div>
+			
+			<!-- Menu Secundario -->
+			<div class="container-tour" style="width: 600px; top: 285px; left: 50%;margin-left: -250px;">
+				<div class="container-tour-inner">
+					<a href="javascript:" class="close-tour">×</a>
+					<span class="seta top"></span>
+					<h6>Menu Secundário</h6>
+					<p>Conheça os cursos da FAESA que têm mais a ver com você e faça sua inscrição.</p>
+					<br />
+					<button class="btn bt-close">Fechar</button>&nbsp;&nbsp;<button class="btn btn-primary bt-next">Próximo &nbsp;<i class="icon-arrow-right icon-white"></i></button>
+					
+				</div>
+			</div>		
+			
+			<!-- Menu Infraestrutura -->
+			<div class="container-tour" style="width: 400px; top: 50px; left: 470px;margin-left: -250px;">
+				<div class="container-tour-inner">
+					<a href="javascript:" class="close-tour">×</a>
+					<span class="seta top-left"></span>
+					<h6>Menu Infraestrutura</h6>
+					<p>Conheça a completa infraestrutura que faz da FAESA uma instituição reconhecida pelo mercado.</p>
+					<br />
+					<button class="btn bt-close">Fechar</button>&nbsp;&nbsp;<button class="btn btn-primary bt-next">Próximo &nbsp;<i class="icon-arrow-right icon-white"></i></button>
+					
+				</div>
+			</div>	
+			
+			<!-- Menu Pesquisa de extensão e cultura -->
+			<div class="container-tour" style="width: 400px; top: 50px; right: 280px;margin-left: -250px;">
+				<div class="container-tour-inner">
+					<a href="javascript:" class="close-tour">×</a>
+					<span class="seta top-right"></span>
+					<h6>Menu Pesquisa, Extensão e Cultura</h6>
+					<p>Conheça os projetos que colocam em prática o conhecimento adquirido na FAESA.</p>
+					<br />
+					<button class="btn bt-close">Fechar</button>&nbsp;&nbsp;<button class="btn btn-primary bt-next">Próximo &nbsp;<i class="icon-arrow-right icon-white"></i></button>
+					
+				</div>
+			</div>	
+			
+			<!-- Menu Aluno -->
+			<div class="container-tour" style="width: 400px; top: 50px; right: 0;margin-left: -250px;">
+				<div class="container-tour-inner">
+					<a href="javascript:" class="close-tour">×</a>
+					<span class="seta top-right" style="right: 20px;"></span>
+					<h6>Menu Aluno</h6>
+					<p>Aqui estão o Núcleo de atendimento e a Central do Aluno, seus canais de relacionamento e acesso à instituição.</p>
+					<br />
+					<button class="btn bt-close">Fechar</button>&nbsp;&nbsp;<button class="btn btn-primary bt-next">Próximo &nbsp;<i class="icon-arrow-right icon-white"></i></button>
+					
+				</div>
+			</div>	
+			
+			<!-- Ouvidoria -->
+			<div class="container-tour" style="width: 500px; top: 55px; right: 135px;margin-left: -250px;">
+				<div class="container-tour-inner">
+					<a href="javascript:" class="close-tour">×</a>
+					<span class="seta right"></span>
+					<h6>Ouvidoria</h6>
+					<p>Seu canal direto para relacionamento e solução de problemas.</p>
+					<br />
+					<button class="btn bt-close">Fechar</button>&nbsp;&nbsp;<button class="btn btn-primary bt-next">Próximo &nbsp;<i class="icon-arrow-right icon-white"></i></button>
+					
+				</div>
+			</div>	
+			
+			<!-- Destaque Notícias -->
+			<div class="container-tour" style="width: 400px; top: 550px; right: 310px;margin-left: -250px;">
+				<div class="container-tour-inner">
+					<a href="javascript:" class="close-tour">×</a>
+					<span class="seta right"></span>
+					<h6>Últimas Notícias</h6>
+					<p>Fique informado sobre o que acontece na FAESA.</p>
+					<br />
+					<button class="btn bt-close">Fechar</button>&nbsp;&nbsp;<button class="btn btn-primary bt-next">Próximo &nbsp;<i class="icon-arrow-right icon-white"></i></button>
+				</div>
+			</div>	
+			
+			<!-- Newsletter -->
+			<div class="container-tour" style="width: 440px; top: 85px; right: 100px;margin-left: -250px;">
+				<div class="container-tour-inner">
+					<a href="javascript:" class="close-tour">×</a>
+					<span class="seta top"></span>
+					<h6>Newsletter</h6>
+					<p>Inscreva-se aqui para receber novidades da FAESA por email.</p>
+					<br />
+					<button class="btn bt-close">Fechar</button>&nbsp;&nbsp;<button class="btn btn-primary bt-next">Próximo &nbsp;<i class="icon-arrow-right icon-white"></i></button>
+					
+				</div>
+			</div>	
+			
+			<!-- Destaque -->
+			<div class="container-tour" style="width: 240px; top: 340px; right: 70px;margin-left: -250px;">
+				<div class="container-tour-inner">
+					<a href="javascript:" class="close-tour">×</a>
+					<span class="seta left"></span>
+					<h6>Em Destaque</h6>
+					<p>Aqui estão as principais novidades da FAESA.</p>
+					<br />
+					<button class="btn bt-close">Fechar</button>&nbsp;&nbsp;<button class="btn btn-primary bt-next">Próximo &nbsp;<i class="icon-arrow-right icon-white"></i></button>
+					
+				</div>
+			</div>	
+			
+			<!-- Busca -->
+			<div class="container-tour" style="width: 450px; top: 185px; left: 420px;margin-left: -250px;">
+				<div class="container-tour-inner">
+					<a href="javascript:" class="close-tour">×</a>
+					<span class="seta top"></span>
+					<h6>Busca</h6>
+					<p>Encontre instantaneamente no site tudo o que você procura.</p>
+					<br />
+					<button class="btn btn-primary bt-close">Finalizar</button>
+					
+				</div>
+			</div>
+		
+		</div>
+			
+		<!-- ========================= -->
+		
+		<div class="primary-menu navbar">
+		    <div class="navbar-inner">
+		        <ul class="nav">
+		            <li class="dropdown">
+		                <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="50" data-close-others="false" id="sub1" data-id='mantenedoras' >Mantenedoras</a>
+		                <div class="primary-submenu dropdown-menu" aria-labelledby="sub1">
+		                	
+							<div class="container-submenu" style="width: 300px;">
+								<div class="submenu-blue-te"></div><div class="submenu-blue-td"></div>
+								<div class="inner-submenu">
+									<div class="submenu-itens">
+										<div class="submenu-content">
+							                <ul>
+							                    <li class="nav-header"> Fundação de Assistência e Educação </li>
+							                    <li><a href="http://portal.faesa.br/mantenedoras/faculdades-integradas-espirito-santense">» Faculdades Integradas Espírito-Santenses</a></li>
+							                    <li class="divider"></li>
+							                    <li class="nav-header"> Associação Educacional de Vitória </li>
+							                    <li><a href="http://portal.faesa.br/mantenedoras/faculdades-integradas-sao-pedro">» Faculdades Integradas São Pedro</a></li>
+							                    <li class="divider"></li>
+							                    <li class="nav-header"> União Capixaba de Ensino </li>
+							                    <li><a href="http://portal.faesa.br/mantenedoras/faculdades-espirito-santense">» Faculdades Espírito-Santenses</a></li>
+							                    <li class="divider"></li>
+							                    <li class="nav-header"> Associação de Assistência ao Ensino </li>
+							                    <li><a href="http://www.cetfaesa.com.br/" target='_blank'>» CET-FAESA</a></li>
+							                </ul>
+										</div>
+									</div>
+								</div>
+								<div class="submenu-blue-re"></div><div class="submenu-blue-rd"></div>
+							</div> 
+		               </div> 
+	            </li>
+	            <li class="divider-vertical"></li>
+	            <li class="dropdown">
+	                <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="50" data-close-others="false" id="sub2" data-id='faesa'>FAESA</a>
+	                <div class="primary-submenu dropdown-menu" aria-labelledby="sub2">
+						<div class="container-submenu" style="width: 230px;">
+							<div class="submenu-blue-te"></div><div class="submenu-blue-td"></div>
+							<div class="inner-submenu">
+								<div class="submenu-itens">
+									<div class="submenu-content">
+						                <ul>
+						                    <li><a href="http://portal.faesa.br/faesa/apresentacao">» Apresentação</a></li>
+						                    <li><a href="http://portal.faesa.br/faesa/avaliacao-institucional">» Avaliação Institucional</a></li>
+						                    <li><a href="http://portal.faesa.br/faesa/gestores">» Gestores</a></li>
+						                    <li><a href="http://portal.faesa.br/faesa/palavra-do-superintendente">» Palavra do Superintendente</a></li>
+						                    <li><a href="http://portal.faesa.br/faesa/parcerias-academicas">» Parcerias Acadêmicas</a></li>
+						                    <li><a href="http://portal.faesa.br/faesa/responsabilidade-social">» Responsabilidade Social</a></li>
+						                    <li><a href="http://portal.faesa.br/faesa/trabalhe-conosco">» Trabalhe Conosco</a></li>
+						                </ul>
+									</div>
+								</div>
+							</div>
+							<div class="submenu-blue-re"></div><div class="submenu-blue-rd"></div>
+						</div> 
+	               </div>
+	            </li>
+	            <li class="divider-vertical"></li>
+	            <li><a href="http://www.cetfaesa.com.br/" class='goto-link' target="_blank" data-id='cet_faesa'>CET-FAESA</a></li>
+	            <li class="divider-vertical"></li>
+	            <li class="dropdown">
+	                <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="50" data-close-others="false" id="sub3" data-id='infraestrutura'>Infraestrutura</a>
+	                <div class="primary-submenu dropdown-menu" aria-labelledby="sub3">
+						<div class="container-submenu" style="width: 200px;">
+							<div class="submenu-blue-te"></div><div class="submenu-blue-td"></div>
+							<div class="inner-submenu">
+								<div class="submenu-itens">
+									<div class="submenu-content">
+							            <ul>
+						                    <li class="nav-header">
+						                      Biblioteca
+						                    </li>
+						                    <li><a href="http://portal.faesa.br/infraestrutura/biblioteca/apresentacao">» Apresentação</a></li>
+						                    <!-- <li><a href="http://biblioteca.faesa.br/biblioteca" target="_blank">» Consulta ao Acervo</a></li>
+						                    <li><a href="http://www.periodicos.capes.gov.br" target="_blank">» Consulta CAPES</a></li>
+						                    <li><a href="http://www.bvirtual.com.br" target="_blank">» Consulta Pearson</a></li> -->
+						                    <li class="divider"></li>
+						                    <li class="nav-header">
+						                      Clínicas
+						                    </li>
+						                    <li><a href="http://portal.faesa.br/infraestrutura/clinicas/odontologia">» Odontologia</a></li>
+						                    <li><a href="http://portal.faesa.br/infraestrutura/clinicas/psicologia">» Psicologia</a></li>
+						                    <li class="divider"></li>
+						                    <li><a href="http://portal.faesa.br/infraestrutura/laboratorios">» Laboratórios</a></li>
+						                    <li><a href="http://portal.faesa.br/infraestrutura/nucleo-de-pratica-juridica">» Núcleo de Prática Jurídica</a></li>
+						                </ul>
+						                
+									</div>
+								</div>
+							</div>
+							<div class="submenu-blue-re"></div><div class="submenu-blue-rd"></div>
+						</div>
+	                </div>
+	            </li>
+	            <li class="divider-vertical"></li>
+	                <li class="dropdown">
+	                <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="50" data-close-others="false" id="sub4" data-id='cursos'>Cursos</a>
+	                <div class="primary-submenu dropdown-menu" aria-labelledby="sub4">
+						<div class="container-submenu" style="width: 200px;">
+							<div class="submenu-blue-te"></div><div class="submenu-blue-td"></div>
+							<div class="inner-submenu">
+								<div class="submenu-itens">
+									<div class="submenu-content">
+							            <ul>
+						                    <li class="nav-header">
+						                      Graduação
+						                    </li>
+						                    
+						                    						                    	<li><a href="http://portal.faesa.br/graduacao/presencial">» Presencial</a></li>
+						                    						                    
+						                    						                    	<li><a href="http://portal.faesa.br/graduacao/a-distancia">» A Distância</a></li>
+						                    						                    
+						                    <li><a href="http://www.faesa.br/vest/" style='color:#cc6a1a' target="_blank" class='menu-azul-inscreva-se'><strong>» Inscreva-se</strong></a></li>
+						                    <li class="divider"></li>
+						                    <li class="nav-header">
+						                      Superior de Tecnologia
+						                    </li>
+						                    
+						                    						                    	<li><a href="http://portal.faesa.br/superior-de-tecnologia/presencial">» Presencial</a></li>
+						                    						                    
+						                    						                    	<li><a href="http://portal.faesa.br/superior-de-tecnologia/a-distancia">» A Distância</a></li>
+						                    						                    
+						                    <li><a href="http://www.faesa.br/vest/" style='color:#cc6a1a' target="_blank" class='menu-azul-inscreva-se'><strong>» Inscreva-se</strong></a></li>
+						                    <li class="divider"></li>
+						                    <li class="nav-header">
+						                      Pós-graduação
+						                    </li>
+						                    
+						                    						                    
+						                    						                    
+						                    <li><a href="http://www.posfaesa.com.br/inscricoes" style='color:#cc6a1a' target="_blank" class='menu-azul-inscreva-se'><strong>» Inscreva-se</strong></a></li>
+						                    <li class="divider"></li>
+						                    <li class="nav-header">
+						                      Extensão
+						                    </li>
+						                    
+						                    						                    
+						                    						                    
+						                    <li><a href="http://cursos.faesa.br/PreInscricao.aspx" style='color:#cc6a1a' target="_blank" class='menu-azul-inscreva-se'><strong>» Inscreva-se</strong></a></li>
+						                </ul>
+									</div>
+								</div>
+							</div>
+							<div class="submenu-blue-re"></div><div class="submenu-blue-rd"></div>
+							
+							<script>
+								
+								$(function(){
+									
+									$('.menu-azul-inscreva-se').click(function(){
+										
+										ga('send', 'event', 'Botão Inscreva-se', 'Click' , 'Menu Topo');
+										
+										return true;
+										
+									});
+									
+								});
+								
+							</script>
+						</div>
+		            </div>  
+	            </li>
+	            <li class="divider-vertical"></li>
+	            <li class="dropdown">
+	                <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="50" data-close-others="false" id="sub5" data-id='como_ingressar'>Como Ingressar</a>
+	                <div class="primary-submenu dropdown-menu" aria-labelledby="sub5">
+						<div class="container-submenu" style="width: 200px;">
+							<div class="submenu-blue-te"></div><div class="submenu-blue-td"></div>
+							<div class="inner-submenu">
+								<div class="submenu-itens">
+									<div class="submenu-content">
+							            <ul>
+						                    <li><a href="http://portal.faesa.br/como-ingressar/processo-seletivo">» Processo Seletivo</a></li>
+						                    <li><a href="http://portal.faesa.br/como-ingressar/politica-beneficios">» Política de Benefícios</a></li>
+						                    <li><a href="http://portal.faesa.br/como-ingressar/financiamento-estudantil">» Financiamento Estudantil</a></li>
+						                </ul>
+									</div>
+								</div>
+							</div>
+							<div class="submenu-blue-re"></div><div class="submenu-blue-rd"></div>
+						</div>
+	            	</div>    
+	            </li>
+	            <li class="divider-vertical"></li>
+	            <li><a href="http://portal.faesa.br/nucleo-de-carreiras" data-id='nucleo_carreiras'>Núcleo de Carreiras</a></li>
+	            <li class="divider-vertical"></li>
+	            <li class="dropdown">
+	                <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="50" data-close-others="false" id="sub6" data-id='pesquisa_extensao_cultura'>Pesquisa, Extensão e Cultura</a>
+	                <div class="primary-submenu dropdown-menu " aria-labelledby="sub6">
+						<div class="container-submenu" style="width: 200px;">
+							<div class="submenu-blue-te"></div><div class="submenu-blue-td"></div>
+							<div class="inner-submenu">
+								<div class="submenu-itens">
+									<div class="submenu-content">
+							            <ul>
+						                    <li><a href="http://portal.faesa.br/pesquisa-extensao-e-cultura/apresentacao">» Apresentação</a></li>
+						                    <li><a href="http://portal.faesa.br/pesquisa-extensao-e-cultura/projetos">» Projetos</a></li>
+						                    <li><a href="http://portal.faesa.br/pesquisa-extensao-e-cultura/revista-faesa">» Revistas FAESA</a></li>
+						                </ul>
+									</div>
+								</div>
+							</div>
+							<div class="submenu-blue-re"></div><div class="submenu-blue-rd"></div>
+						</div>
+		            </div>
+	            </li>
+	            <li class="divider-vertical"></li>
+	            <li><a href="http://portal.faesa.br/noticias" data-id='noticias'>Notícias</a></li>
+	            <li class="divider-vertical"></li>
+	            <li class="dropdown">
+	                <a href="http://portal.faesa.br/eventos" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="50" data-close-others="false" id="sub7" data-id='eventos'>Eventos</a>
+	                <div class="primary-submenu dropdown-menu pull-right" aria-labelledby="sub7">
+						<div class="container-submenu" style="width: 200px;">
+							<div class="submenu-blue-te"></div><div class="submenu-blue-td"></div>
+							<div class="inner-submenu">
+								<div class="submenu-itens">
+									<div class="submenu-content">
+							            <ul>
+						                    <li><a href="http://www.faesa.br/corrida" target='_blank'>» Corrida FAESA</a></li>
+						                    <!-- <li><a href="http://jornada.faesa.br/" target='_blank'>» Jornada Científica</a></li> -->
+						                    <!-- <li><a href="http://faesa.br/conenco/" target='_blank'>» CONENCO</a></li> -->
+						                    <li><a href="http://www.faesa.br/jornada" target='_blank'>» Jornada Científica</a></li>
+						                </ul>
+									</div>
+								</div>
+							</div>
+							<div class="submenu-blue-re"></div><div class="submenu-blue-rd"></div>
+						</div>
+	            	</div>
+	            </li>
+	            <li class="divider-vertical"></li>
+	            <li><a href="http://portal.faesa.br/fale-conosco" data-id='fale_conosco'>Fale Conosco</a></li>
+	            <li class="divider-vertical"></li>
+	            <li class="dropdown">
+	                <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="50" data-close-others="false" id="sub8" data-id='aluno'><b>Aluno</b></a>
+	                <div class="primary-submenu dropdown-menu pull-right" aria-labelledby="sub8">
+						<div class="container-submenu" style="width: 240px;">
+							<div class="submenu-blue-te"></div><div class="submenu-blue-td"></div>
+							<div class="inner-submenu">
+								<div class="submenu-itens">
+									<div class="submenu-content">
+							            <ul>
+						                    <li><a href="http://portal.faesa.br/aluno/nucleo-de-atendimento-ao-aluno">» Núcleo de Atendimento ao Aluno</a></li>
+						                    <li><a href="http://aluno.faesa.br/" target='_blank'>» Central do Aluno</a></li>
+						                    <li><a href="http://www.faesa.br/calendario" target='_blank'>» Calendário Acadêmico</a></li>
+						                    
+						                </ul>
+									</div>
+								</div>
+							</div>
+							<div class="submenu-blue-re"></div><div class="submenu-blue-rd"></div>
+						</div>
+	            	</div>
+	            </li>
+	         </ul>
+	        </div>
+		</div>
+		
+		<script>
+			
+			$(function(){
+				var selected_menu='';
+				
+				if(selected_menu!=''){
+					$('.nav a[data-id="'+selected_menu+'"] , .li a[data-id="'+selected_menu+'"]').addClass('active');
+				}
+				
+				var selected_submenu='';
+				
+				if(selected_submenu!=''){
+					$('.secondary-menu li a[data-id="'+selected_submenu+'"]').addClass('active');
+				}
+				
+			});
+
+		</script>
+	</div>
+</div>
+
+<!-- BARRA NEWSLETTER -->
+<div class="container-fluid newsletter">
+    <div class="container">
+	    <form class="form-inline pull-right">
+		    <span class="label label-newsletter">Cadastre-se e receba novidades:</span>
+		    <div class="input-prepend">
+		    	<span class="b-g-tl g4"></span><span class="b-g-bl g4"></span><span class="b-g-tr g4"></span><span class="b-g-br g4"></span>
+		    	<input type="text" id='news_nome' class="input-small input-news" placeholder="Nome"/>
+		    </div>
+		    <div class="input-prepend">
+		    	<span class="b-g-tl g4"></span><span class="b-g-bl g4"></span><span class="b-g-tr g4"></span><span class="b-g-br g4"></span>
+		    	<input type="text" id='news_email' class="input-small input-news" placeholder="E-mail"/>
+		    </div>
+		    <div class="input-prepend">
+		    	<span class="b-g-tl g4"></span><span class="b-g-bl g4"></span><span class="b-g-tr g4"></span><span class="b-g-br g4"></span>
+		    	<input type="text" id='news_telefone' class="input-small input-news" placeholder="Telefone"/>
+		    </div>
+		    <div class="input-prepend">
+		    	<span class="b-g-tl g4"></span><span class="b-g-bl g4"></span><span class="b-g-tr g4"></span><span class="b-g-br g4"></span>
+		    	<input type="submit" class="btn general btn-newsletter" value="OK" />
+		    </div>
+		    
+		    <div id='preloader_news' style='float:left;display:none'>
+		    	<div style='width:30px;height:30px;background:#ff0000'></div>
+		    </div>
+		    
+	    </form>
+	    </div>
+	    
+		<script>
+			$(function(){
+				$('.btn-newsletter').click(function(){
+					
+					var erros=[];
+					
+					if( $('#news_nome').val() ==  $('#news_nome').attr('placeholder') || $('#news_nome').val()=='' ){
+						erros.push('Você precisa preencher o campo nome');
+					}
+					
+					if( $('#news_email').val() ==  $('#news_email').attr('placeholder') || $('#news_email').val()=='' ){
+						erros.push('Você precisa preencher o campo e-mail');
+					}
+					
+					if( $('#news_telefone').val() ==  $('#news_telefone').attr('placeholder') || $('#news_telefone').val()=='' ){
+						erros.push('Você precisa preencher o campo telefone');
+					}
+					
+					if(erros.length>0){
+						
+						alert(erros.join('\n'));
+						
+						return false;
+						
+					}
+					
+					this.currentrefresh=$.ajax({
+					  url: webroot('Newsletter/add'),
+					  
+					  data:{ nome:$('#news_nome').val() , 
+					  		 email:$('#news_email').val() , 
+					  		 telefone:$('#news_telefone').val() },
+					  		 
+					  type:'post',
+					  error:function(){
+					  	preloader_geral(false);
+					  },
+					  
+					  success:function(data){
+					  	
+					  	//$('#preloader_news').hide();
+					  	
+					  	
+					  	var json=JSON.decode(data);
+					  	
+					  	
+					  	preloader_geral(false,function(){
+					  		alert(json.text);
+					  	});
+					  	
+					  	
+					  	if(json.code==0){
+					  		return;
+					  	}
+					  	
+					  	$('#news_nome').val(''); 
+				  		$('#news_email').val(''); 
+				  		$('#news_telefone').val('') 
+				  		
+				  		ga('send', 'event', 'Formulário Newsletter', 'Cadastrar');
+					  }
+					  
+					});
+					
+					//$('#preloader_news').show();
+					
+					preloader_geral(true);
+					
+					return false;
+				});
+			});
+		</script>
+</div>
+
+<!-- BARRA LOGOMARCA -->
+<div class="container-fluid search">
+	<div class="container">
+		<div class="row-fluid">
+			<div class="span3 pull-left">
+				<a href="http://portal.faesa.br/" class="logomarca-top pull-left"><img src="http://portal.faesa.br/lay/logomarca-faesa-topo.gif" title="Faesa. Faça acontecer." alt="Faesa. Faça acontecer." /></a>
+			</div>
+			
+			<div class="span9">
+				<div class="input-search pull-left" id='container_busca'>
+					<span class="b-w-tl tl-0"></span><span class="b-w-bl bl-0"></span><span class="b-w-tr tr-0"></span><span class="b-w-br br-0"></span>
+				    
+					    <input class="search-query" id="prependedInput" type="text" placeholder="Digite o que você procura.">
+					    
+					    <a href="javascript:" class="button-search active pull-right"></a>
+					    <script>
+					    
+					    	function buscar(){
+					    		window.location.href='/busca/'+$('#prependedInput').val();
+					    		
+					    		return false;
+					    	}
+					    
+					    	$('#container_busca input').keypress(function(e){
+					    		if(e.keyCode==13){
+					    			buscar();
+					    		}
+					    	});
+					    
+					    	$('#container_busca a').click(function(){
+					    		buscar();
+					    	});
+					    </script>
+				    
+				</div>
+				
+				<div class="group-social-media pull-right" id='menu-redes-topo'>
+					<span class="divider-vertical pull-right" style="float: left; margin: 12px 20px 0 0;"></span>
+					<a class="btn general social-media" href="https://www.facebook.com/faesaoficial?fref=ts" target='_blank' data-rede='facebook'>
+						<span class="b-w-tl"></span><span class="b-w-bl"></span><span class="b-w-tr"></span><span class="b-w-br"></span>
+						<img src="http://portal.faesa.br/lay/icon-facebook.png"  />
+					</a>
+					<a class="btn general social-media" href="https://twitter.com/faesa_oficial" target='_blank' data-rede='twitter'>
+						<span class="b-w-tl"></span><span class="b-w-bl"></span><span class="b-w-tr"></span><span class="b-w-br"></span>
+						<img src="http://portal.faesa.br/lay/icon-twitter.png"  />
+					</a>
+					<a class="btn general social-media" href="http://www.youtube.com/user/faesaoficial" target='_blank' data-rede='youtube'>
+						<span class="b-w-tl"></span><span class="b-w-bl"></span><span class="b-w-tr"></span><span class="b-w-br"></span>
+						<img src="http://portal.faesa.br/lay/icon-youtube.png"  />
+					</a>
+					<a class="btn general social-media" href="http://www.linkedin.com/company/491552?trk=tyah" target='_blank' data-rede='linkedin'>
+						<span class="b-w-tl"></span><span class="b-w-bl"></span><span class="b-w-tr"></span><span class="b-w-br"></span>
+						<img src="http://portal.faesa.br/lay/icon-linkedin.png"  />
+					</a>
+					<span class="divider-vertical" style="float: left; margin: 10px 14px 0 10px;"></span>
+					<a class="btn general ombudsman botao-ouvidoria" href="http://portal.faesa.br/fale-conosco/ouvidoria">
+						<span class="b-w-tl"></span><span class="b-w-bl"></span><span class="b-w-tr"></span><span class="b-w-br"></span>
+						<span class="ico-ombudsman"><img src="http://portal.faesa.br/lay/icon-audition.png"  /></span> 
+						<span class="text-left">Ouvidoria</span>
+					</a>
+					
+					<script>
+						$(function(){
+							
+							$('#menu-redes-topo a[data-rede]').click(function(){
+								
+								var rede=$(this).attr('data-rede');
+								
+								ga('send', 'event', 'Botões Redes Sociais Topo', 'Click '+rede );
+								
+							});
+				
+							
+							
+						});
+						
+					</script>
+					
+				</div>
+			
+		</div>
+	</div>
+</div>
+</div>
+
+<!-- MENU SECUNDÁRIO  -->
+<div class="container-fluid bg-menu-secondary">		
+	<div class="container">
+		<div class="secondary-menu navbar">
+			<div class="navbar-inner">
+		   		<ul class="nav">
+		            <li>
+						<div class="curtir">
+							<iframe src='//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fportal.faesa.br%2F%3Futm_source%3Dfacebook%26utm_medium%3Dcurtir-home%26utm_campaign%3Dsitefaesa&amp;send=false&amp;layout=button_count&amp;width=150&amp;show_faces=true&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=467079939988069' scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:80px; height:21px;" allowTransparency="true"></iframe>
+						</div>
+		            </li>
+		            <li class="divider-vertical"></li>
+		            <li class="dropdown">
+		            <a href="/graduacao/" class="dropdown-toggle menu-produtos" data-toggle="dropdown" data-hover="dropdown" data-delay="50" data-close-others="false"  id="sub9" data-id='graduacao'>Graduação</a>
+		         
+		            <div class="secondary-submenu dropdown-menu" aria-labelledby="sub9">
+						
+						<div class="container-submenu" style="width: 800px;">
+							<div class="submenu-orange-te"></div><div class="submenu-orange-td"></div>
+							<div class="inner-submenu">
+								<div class="submenu-itens">
+									<div class="submenu-content menu_height_fixer">
+
+										<ul style="width: 230px;">
+					                        <li class="nav-header">Humanas</li>
+					                        												<li><a href="/curso-de-graduacao/administracao-27">» Administração - Campus Av. Vitória</a></li>
+																								<li><a href="/curso-de-graduacao/administracao-28">» Administração - Campus Cariacica</a></li>
+																								<li><a href="/curso-de-graduacao/arquitetura-e-urbanismo-29">» Arquitetura e Urbanismo</a></li>
+																								<li><a href="/curso-de-graduacao/ciencias-contabeis-31">» Ciências Contábeis</a></li>
+																								<li><a href="/curso-de-graduacao/jornalismo-33">» Jornalismo</a></li>
+																								<li><a href="/curso-de-graduacao/publicidade-e-propaganda-34">» Publicidade e Propaganda</a></li>
+																								<li><a href="/curso-de-graduacao/design-de-interiores-35">» Design de Interiores</a></li>
+																								<li><a href="/curso-de-graduacao/design-de-moda-e-vestuario-37">» Design de Moda e Vestuário</a></li>
+																								<li><a href="/curso-de-graduacao/direito-38">» Direito</a></li>
+																								<li><a href="/curso-de-graduacao/pedagogia-45">» Pedagogia</a></li>
+																							 <li class="nav-header">Superior de Tecnologia</li>
+											 
+											 												<li><a href="/curso-de-graduacao/marketing-a-distancia-55">» Marketing (a distância)</a></li>
+																								<li><a href="/curso-de-graduacao/processos-gerenciais-campus-cariacica-58">» Processos Gerenciais (Campus Cariacica)</a></li>
+																							
+										</ul>
+										<ul style="width: 260px;">
+											<li class="nav-header">Exatas</li>
+																							<li><a href="/curso-de-graduacao/engenharia-ambiental-40">» Engenharia Ambiental</a></li>
+																								<li><a href="/curso-de-graduacao/engenharia-civil-41">» Engenharia Civil</a></li>
+																								<li><a href="/curso-de-graduacao/engenharia-eletrica-42">» Engenharia Elétrica</a></li>
+																								<li><a href="/curso-de-graduacao/engenharia-mecanica-44">» Engenharia Mecânica</a></li>
+																								<li><a href="/curso-de-graduacao/engenharia-de-computacao-46">» Engenharia de Computação</a></li>
+																								<li><a href="/curso-de-graduacao/engenharia-de-controle-e-automacao-47">» Engenharia de Controle e Automação</a></li>
+																								<li><a href="/curso-de-graduacao/quimica-49">» Química</a></li>
+																								<li><a href="/curso-de-graduacao/engenharia-de-producao-50">» Engenharia de Produção</a></li>
+																								<li><a href="/curso-de-graduacao/sistemas-de-informacao-51">» Sistemas de Informação</a></li>
+																								<li><a href="/curso-de-graduacao/ciencia-da-computacao-62">» Ciência da Computação</a></li>
+																								<li><a href="/curso-de-graduacao/engenharia-quimica-65">» Engenharia Química</a></li>
+																								<li><a href="/curso-de-graduacao/engenharia-de-petroleo-66">» Engenharia de  Petróleo</a></li>
+																								<li><a href="/curso-de-graduacao/agronomia-67">» Agronomia</a></li>
+																							<li class="nav-header">Superior de Tecnologia</li>
+																							<li><a href="/curso-de-graduacao/jogos-digitais-52">» Jogos Digitais</a></li>
+																								<li><a href="/curso-de-graduacao/gestao-da-producao-industrial-53">» Gestão da Produção Industrial</a></li>
+																								<li><a href="/curso-de-graduacao/analise-e-desenvolvimento-de-sistemas-57">» Análise e Desenvolvimento de Sistemas</a></li>
+																								<li><a href="/curso-de-graduacao/redes-de-computadores-59">» Redes de Computadores</a></li>
+																						</ul>
+										<ul style="width: 200px;">
+										    <li class="nav-header">Biomédicas</li>
+										    												<li><a href="/curso-de-graduacao/ciencias-biologicas-32">» Ciências Biológicas</a></li>
+																								<li><a href="/curso-de-graduacao/enfermagem-39">» Enfermagem</a></li>
+																								<li><a href="/curso-de-graduacao/odontologia-43">» Odontologia</a></li>
+																								<li><a href="/curso-de-graduacao/psicologia-48">» Psicologia</a></li>
+																							
+											
+											
+											
+																						
+																						
+										</ul>
+										<div class="container submenu-footer">Saiba como ingressar na FAESA por meio de <a href="/como-ingressar/transferencia" class="link-blue">Transferência</a>.</div>
+									</div>
+								</div>
+							</div>
+							<div class="submenu-orange-re"></div><div class="submenu-orange-rd"></div>
+						</div> 
+						
+		            </div>  
+		            </li>
+		            <li class="divider-vertical"></li>
+		            <li class="dropdown">
+		            <a href="/superior-de-tecnologia/" class="dropdown-toggle menu-produtos" data-toggle="dropdown" data-hover="dropdown" data-delay="50" data-close-others="false"  id="sub10" data-id='superior_tecnologia'>Superior de Tecnologia</a>
+		            <div class="secondary-submenu dropdown-menu" aria-labelledby="sub10">
+		            	
+						<div class="container-submenu" style="width: 380px;">
+							<div class="submenu-orange-te"></div><div class="submenu-orange-td"></div>
+							<div class="inner-submenu">
+								<div class="submenu-itens">
+									<div class="submenu-content">
+										
+									<ul style="height: 260px;">
+										<li class="nav-header"></li>
+																					<li><a href="/superior-de-tecnologia/analise-e-desenvolvimento-de-sistemas-57">» Análise e Desenvolvimento de Sistemas</a></li>
+																						<li><a href="/superior-de-tecnologia/gestao-da-producao-industrial-53">» Gestão da Produção Industrial</a></li>
+																						<li><a href="/superior-de-tecnologia/jogos-digitais-52">» Jogos Digitais</a></li>
+																						<li><a href="/superior-de-tecnologia/marketing-a-distancia-55">» Marketing (a distância)</a></li>
+																						<li><a href="/superior-de-tecnologia/processos-gerenciais-campus-cariacica-58">» Processos Gerenciais (Campus Cariacica)</a></li>
+																						<li><a href="/superior-de-tecnologia/redes-de-computadores-59">» Redes de Computadores</a></li>
+																				</ul>
+									<div class="container submenu-footer">Conheça mais cursos Tecnológicos no <a href="http://www.cetfaesa.com.br/" target='_blank' class="link-blue">CET-FAESA</a>.</div>
+									</div>
+								</div>
+							</div>
+							<div class="submenu-orange-re"></div><div class="submenu-orange-rd"></div>
+						</div> 
+		            	
+		            </div> 
+		            </li>
+		            <li class="divider-vertical"></li>
+		            <li><a href="/educacao-a-distancia/" class='menu-produtos' data-id='educacao_distancia'>Educação a Distância</a></li>
+		            <li class="divider-vertical"></li>
+		            <li class="dropdown">
+		            <!-- <a target="_blank" href="http://pos.faesa.br/" class="dropdown-toggle menu-produtos" data-toggle="dropdown" data-hover="dropdown" data-delay="50" data-close-others="false"  id="sub11" data-id='pos_graduacao'>Pós-Graduação</a> -->
+					
+					<a href="javascript:" class="dropdown-toggle menu-produtos" target="_blank" id='btpos'>Pós-Graduação</a>
+					
+		            <div class="secondary-submenu dropdown-menu pull-right" aria-labelledby="sub11" style="display:none!important;">
+		            	
+						<div class="container-submenu" style="width: 680px;">
+							<div class="submenu-orange-te"></div><div class="submenu-orange-td"></div>
+							<div class="inner-submenu">
+								<div class="submenu-itens">
+									<div class="submenu-content menu_height_fixer">
+
+										<ul style="width: 330px;">
+											<li class="nav-header">Administração e Negócios</li>
+																																	
+											<!-- <li class="nav-header">Gestão de Marketing e Vendas</li>
+											 -->
+											
+											<li class="nav-header">Computação e Engenharia</li>
+																						
+											<li class="nav-header">Arquitetura e Design</li>
+																						
+										</ul>
+										<ul style="width: 250px;">
+											
+											<!-- <li class="nav-header">Controladoria e Finanças</a></li>
+																						 -->
+											<li class="nav-header">Educação</li>
+																						
+											<li class="nav-header">Ciências Médicas e de Saúde</li>
+																						
+											<li class="nav-header">Comunicação</li>
+																						
+											<li class="nav-header">Direito</li>
+																						
+											<li class="nav-header">Meio Ambiente</li>
+																					</ul>
+										<div class="container submenu-footer">Confira também nossos <a href="/Extensao/" class="link-blue">Cursos de Extensão</a>.</div>
+									</div>
+								</div>
+							</div>
+							<div class="submenu-orange-re"></div><div class="submenu-orange-rd"></div>
+						</div> 
+		            	
+		            </div> 
+		            </li>
+		            <li class="divider-vertical"></li>
+					<li><a href="/Extensao/" data-id='extensao' class='menu-produtos'>Cursos de Extensão</a></li>
+					<li class="divider-vertical"></li>
+					<li>
+					    <a class="btn general orange" href="http://www.faesa.br/vest/" target="_blank" id="insc-menu-sec" style="margin: 7px 0 0 5px;">
+					    	<span class="b-w2-tl"></span><span class="b-w2-bl"></span><span class="b-w2-tr"></span><span class="b-w2-br"></span>
+						<small>Inscreva-se</small><br>
+						  VestFAESA
+						  
+						</a>
+					    
+					    <script>
+								
+								$(function(){
+									
+									$('#insc-menu-sec').click(function(){
+										
+										ga('send', 'event', 'Botão Inscreva-se', 'Click' , 'Menu Secundário');
+										
+										return true;
+										
+									});
+									
+								});
+								
+							</script>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- CONTENT -->
+<div class="container-fluid content-general bg-content1">
+	<div class="container-fluid content-general bg-content2">
+		
+
+<div class="container content">
+
+	<div class="row-fluid">
+		<div class="span8">
+			<!-- CAROUSEL --> 
+		    <div id="destaque_principal" class="carousel slide desk" style='height:auto'>
+		    	<span class="b-w2-tl"></span>
+		    	<span class="b-w2-tr"></span>				   		
+		   				   		<div class="carousel-inner DestaqueApp_mask" style='width:627px;height:284px'>
+		   									<div class="active item" data-time='20'>
+							<a href="http://www.faesa.br/vest" target="_blank" class='link-dstk'><img src="files/arquivos_destaque/573396570c45b.jpeg" width="100%" border="0" /></a>
+						</div> 
+											<div class="active item" data-time='20'>
+							<a href="http://pos.faesa.br/novo/" target="" class='link-dstk'><img src="files/arquivos_destaque/5717a27115568.jpeg" width="100%" border="0" /></a>
+						</div> 
+											<div class="active item" data-time='15'>
+							<a href="http://www.creditouniversitario.com.br/graduacao-faesa/?utm_source=banner_institucional_graduacao_ies_FAESA_627x284_2015&utm_medium=referral&utm_campaign=referencia_ies#.VpkS_FMrL5Y" target="_blank" class='link-dstk'><img src="files/arquivos_destaque/56991346e2391.jpeg" width="100%" border="0" /></a>
+						</div> 
+								    </div>
+			     
+			    <div class="dsk-box">
+			    	<span class="b-w-bl"></span><span class="b-w-br"></span>
+				    <ol id='desaque_menu' class="carousel-indicators dsk">
+				    								   <li class="DestaqueApp_menu_item destaque-bt "></li>
+					    							   <li class="DestaqueApp_menu_item destaque-bt "></li>
+					    							   <li class="DestaqueApp_menu_item destaque-bt "></li>
+					    				    </ol>
+			    </div>
+			     
+		    </div>		        
+		</div>
+
+		<div class="span4">
+							<a href="http://www.faesa.br/cariacica" title=""><img src="files/arquivo_banners/5730aea9ed59e.jpeg" alt="FAESA cariacica" title="FAESA cariacica"></a><br><br>
+							<a href="http://www.faesa.br/vest" title=""><img src="files/arquivo_banners/57083866b8436.jpeg" alt="vest faesa 2016.2" title="vest faesa 2016.2"></a><br><br>
+					</div>
+	</div>
+
+	<script type='text/javascript'>
+	    $(function(){
+	    	new DestaqueApp('#destaque_principal',{autoSlide:true});
+	    });
+	    $('.link-dstk').click(function(){
+			ga('send', 'event', 'Destaque Principal Home', 'Click' , $(this).attr('href'));
+			
+			return true;
+		});
+	    
+    </script>
+
+	<div class="row-fluid noticias">
+
+		<div class="span12 titulo-news"><h3>últimas notícias</h3></div>
+
+		<div class="span8" style='margin:0;'>
+						<span class='data-noticia'>24/05/2016 - Histórias</span>
+			<a href="noticias/jornalista-formada-pela-faesa-publica-livro-sobre-o-bairro-coqueiral-de-aracruz" title="">
+				<div class="img-noticias" style="width:280px; height:280px; background-image:url(files/thumb_imagem_noticia/5744a4819bd82.jpeg);" title="Jornalista formada pela FAESA publica livro sobre o bairro Coqueiral de Aracruz" alt="Jornalista formada pela FAESA publica livro sobre o bairro Coqueiral de Aracruz"></div>			
+			<h2>Jornalista formada pela FAESA publica livro sobre o bairro Coqueiral de Aracruz</h2>
+			<hr>
+			<p> Contar a hist&oacute;ria do bairro onde foi criada e, automaticamente, recontar a sua pr&oacute;pria hist&oacute;ria. Esses foram alguns dos motivos que levaram a jornalista Luiza Medina a escrever o livro-rep... <strong>+ leia mais.</strong></p></a>
+		</div>
+
+		<div class="span4">
+											<div class="noticia-menor">
+					<span class='data-noticia'>16/05/2016 - Hack FAESA</span>
+					<a href="noticias/equipe-vence-maratona-de-programacao-com-projeto-sobre-seguranca-publica" title="">
+					<div class="img-noticias" style="width:83px; height:73px; background-image:url(files/thumb_imagem_noticia/573a217274432.jpeg);" title="Equipe vence maratona de programação com projeto sobre segurança pública" alt="Jornalista formada pela FAESA publica livro sobre o bairro Coqueiral de Aracruz"></div>			
+					<h2>Equipe vence maratona de programação com projeto sobre segurança pública</h2>
+					</a>
+				</div><hr>
+											<div class="noticia-menor">
+					<span class='data-noticia'>09/05/2016 - Concurso</span>
+					<a href="noticias/trabalhos-desenvolvidos-por-estudantes-da-faesa-sao-premiados-pela-arcelormittal" title="">
+					<div class="img-noticias" style="width:83px; height:73px; background-image:url(files/thumb_imagem_noticia/5730eadc63171.jpeg);" title="Trabalhos desenvolvidos por estudantes da FAESA são premiados pela ArcelorMittal" alt="Jornalista formada pela FAESA publica livro sobre o bairro Coqueiral de Aracruz"></div>			
+					<h2>Trabalhos desenvolvidos por estudantes da FAESA são premiados pela ArcelorMittal</h2>
+					</a>
+				</div><hr>
+											<div class="noticia-menor">
+					<span class='data-noticia'>16/05/2016 - Direito FAESA</span>
+					<a href="noticias/debate-sobre-pessoas-com-deficiencia-sera-realizado-nesta-terca-feira-17" title="">
+					<div class="img-noticias" style="width:83px; height:73px; background-image:url(files/thumb_imagem_noticia/5739bf29b5c6f.jpeg);" title="Debate sobre pessoas com deficiência será realizado nesta terça-feira (17)" alt="Jornalista formada pela FAESA publica livro sobre o bairro Coqueiral de Aracruz"></div>			
+					<h2>Debate sobre pessoas com deficiência será realizado nesta terça-feira (17)</h2>
+					</a>
+				</div><hr>
+					</div>
+
+	</div>
+
+	<div class="row-fluid politica">
+		<div class="span8 titulo-news">
+			<h3>políticas de benefícios</h3>
+			<div class="politica-beneficios">
+				<h4>Descontos, bolsas, convênios e muito mais</h4>
+				<p>A FAESA oferece uma ampla Política de Benefícios com bolsas e descontos que vão te ajudar a ingressar na faculdade. São descontos para transferência, segundo curso, grupos familiares, convênios com empresas, entre outros. <a href='como-ingressar/politica-beneficios'>Clique e confira nossos benefícios</a></p>
+			</div>
+		</div>
+		<div class="span4">
+			<!--<div class="dsk-cb">
+				<span class="b-w2-tl"></span>
+				<span class="b-w2-bl"></span>
+				<span class="b-w2-tr"></span>
+				<span class="b-w2-br"></span>
+				<p>
+					<a href="nucleo-de-carreiras">Faesa, você e o mercado de trabalho</a><br />
+					Veja como funciona nosso Núcleo de Carreiras.
+				</p>
+			</div>-->
+			<a href='faesa/avaliacao-institucional'><img src='img/logoAvaliacao.jpg'></a><br>
+			<br>
+
+			<div class="dsk-cb">
+				<span class="b-w2-tl"></span>
+				<span class="b-w2-bl"></span>
+				<span class="b-w2-tr"></span>
+				<span class="b-w2-br"></span>
+				<p>Saiba como facilitar seu ingresso</p>
+				<ul>
+					<li><a href="http://www.creditouniversitario.com.br/graduacao-faesa/#.VSRB-_nF9UU" target="_blank"><img src="lay/min-pravaler.png" border="0" width="61" height="33" alt="Pravaler" title="Pravaler" /></a></li>
+					<li><a href="http://sisfiesportal.mec.gov.br/" target="_blank"><img src="lay/min-fies.png" border="0" width="61" height="33" alt="Fies" title="Fies" /></a></li>
+					<li><a href="http://siteprouni.mec.gov.br/" target="_blank"><img src="lay/min-prouni.png" border="0" width="61" height="33" alt="Prouni" title="Prouni" /></a></li>
+					<li><a href="http://www.nossabolsa.es.gov.br/" target="_blank"><img src="lay/min-nossa-bolsa.png" border="0" width="61" height="33" alt="Nossa Bolsa" title="Nossa Bolsa" /></a></li>
+				</ul>	
+			</div>
+		</div>
+	</div>
+
+	<br><br>
+
+	<div class="row-fluid mini-destaques">
+						<div class="span4">
+					<div class="img-border"><span class="b-w2-tl"></span><span class="b-w2-bl"></span><span class="b-w2-tr"></span><span class="b-w2-br"></span><a href="pesquisa-extensao-e-cultura/revista-faesa" target="_self"><img src="files/arquivo_minidestaques/5202856a28cca.jpeg" width="298" height="131" /></a></div>
+					<h5><a href="pesquisa-extensao-e-cultura/revista-faesa" target="_self">Revista Científica FAESA</a></h5>
+					<p style="line-height: 16px;">Veja todas as edições e fique por dentro da produção científica da Faesa.</p>
+				</div>
+								<div class="span4">
+					<div class="img-border"><span class="b-w2-tl"></span><span class="b-w2-bl"></span><span class="b-w2-tr"></span><span class="b-w2-br"></span><a href="http://portal.faesa.br/infraestrutura/nucleo-de-pratica-juridica" target=""><img src="files/arquivo_minidestaques/52d5273464fda.jpeg" width="298" height="131" /></a></div>
+					<h5><a href="http://portal.faesa.br/infraestrutura/nucleo-de-pratica-juridica" target="">Núcleo de Prática Jurídica</a></h5>
+					<p style="line-height: 16px;">Clique e conheça o Núcleo de Prática, Atividades Complementares e Pesquisa Jurídica.</p>
+				</div>
+								<div class="span4">
+					<div class="img-border"><span class="b-w2-tl"></span><span class="b-w2-bl"></span><span class="b-w2-tr"></span><span class="b-w2-br"></span><a href="http://portal.faesa.br/infraestrutura/laboratorios" target=""><img src="files/arquivo_minidestaques/52d52809995ad.jpeg" width="298" height="131" /></a></div>
+					<h5><a href="http://portal.faesa.br/infraestrutura/laboratorios" target="">Laboratórios FAESA</a></h5>
+					<p style="line-height: 16px;">Conheça toda infraestrutura de laboratórios da FAESA.</p>
+				</div>
+					</div>
+
+	<div class="row-fluid">
+		<div class="span6">
+			<!-- TWITTER -->
+		<h3>@Faesa_Oficial</h3>
+		<div class="faesa-oficial">
+			<span class="b-w-bl"></span><span class="b-w-br"></span>
+			<div class="dsk-twitter">
+				<div class="post"></div>
+			</div>
+			<div class="text-center depoimento-footer" style="padding: 10px 0;">
+				<a href="https://twitter.com/faesa_oficial" class="twitter-follow-button" data-show-count="false" data-lang="pt">Seguir @faesa_oficial</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			</div>
+		</div>
+		
+		<script>
+		$(function(){
+
+			new set.TimelineMonitor( '.faesa-oficial' , {screen_name:'faesa_oficial'} );
+		});
+		</script>
+		</div>
+		<div class="span6">
+			<!-- DEPOIMENTOS -->
+<h3>fiz faesa</h3>
+<div class="depoimentos">
+	<span class="b-w-bl"></span><span class="b-w-br"></span>
+	<ul class="depoimentos-box">
+		<li>
+			<ul class="conjunto-depoimentos">
+								<li>
+            		<span class="img-border">
+            			<span class="b-g-tl"></span><span class="b-g-bl"></span><span class="b-g-tr"></span><span class="b-g-br"></span>
+            			<img src="/files/arquivos_depoimentos/5203e3cc561d9.jpeg" width="83" height="83" alt="" />
+            		</span>
+            		<b>Ana Pinho</b><br/>
+            		<span>Odontologia</span><br  />
+            		<i>“Minha formação na FAESA me ensinou a ciência da Odontologia e me abriu os olhos para nunca deixar de enxergar o ser humano com respeito e carinho, exatamente nos momentos mais fragilizados de sua vida.”</i>
+				</li>
+							</ul>
+		</li>
+		<!--<li class="text-center depoimento-footer">Faça FAESA você também</li>-->
+	</ul>
+</div>		</div>
+	</div>
+
+</div>
+
+
+ 				</div>
+</div>
+
+<!-- FOOTER -->
+<div class="container-fluid content-general footer-adress">
+	<div class="container">
+		<div class="row-fluid">
+			<div class="span3">
+				<p>
+					<b>Campus Av. Vitória</b>
+					Av. Vitória, 2.220 - Monte Belo, Vitória, ES, CEP 29053-360
+					<b>(27) 2122-4100</b>
+				</p>
+			</div>
+			<div class="span3">
+				<p>
+					<b>Pós-FAESA </b>
+					Av. Vitória, 2.084 - Monte Belo, Vitória, ES, CEP 29053-360 
+					<b>(27) 3421-0100</b>
+				</p>
+			</div>
+			<div class="span3">
+				<p>
+					<b>Campus Cariacica</b>
+					Rua São Jorge, 355 - Campo Grande, Cariacica, ES,  <br />CEP 29150-525
+					<b>(27) 2122-0700</b>
+				</p>
+			</div>
+			<div class="span3">
+				<p>
+					<b>CET-FAESA</b>
+					Av.Vitória, 2084 - Monte Belo, Vitória, ES,  <br />CEP 29053-360
+					<b>(27) 3132-4077</b>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid  content-general footer-map">
+	<div class="container">
+		<div class="row-fluid">
+			<div class="span2">
+				<ul>
+					<li class="header">A Faesa</li>
+					<li><a href="/faesa/apresentacao">Apresentação</a></li>
+					<li><a href="/faesa/avaliacao-institucional">Avaliação Institucional</a></li>
+					<li><a href="/faesa/gestores">Gestores</a></li>
+					<li><a href="/faesa/palavra-do-superintendente">Palavra do Diretor</a></li>
+					<li><a href="/faesa/parcerias-academicas">Parcerias Acadêmicas</a></li>
+					<li><a href="/faesa/responsabilidade-social">Responsabilidade Social</a></li>
+					<li><a href="/faesa/trabalhe-conosco">Trabalhe Conosco</a></li>
+					<li class="space"><a href="http://www.cetfaesa.com.br/" target='_blank'>CET-FAESA</a></li>
+				</ul>
+			</div>
+			<div class="span2">
+				<ul>
+					<li class="header">Infraestrutura</li>
+					<li class="sub-title">Biblioteca</li>
+					<li>
+						<ul>
+							<li><a href="/infraestrutura/biblioteca/apresentacao">Apresentação</a></li>
+							<!-- <li><a href="http://biblioteca.faesa.br/biblioteca" target='_blank'>Consulta ao Acervo</a></li>
+							<li><a href="http://www.periodicos.capes.gov.br" target='_blank'>Consulta CAPES</a></li>
+							<li><a href="http://www.bvirtual.com.br" target='_blank'>Consulta Pearson</a></li>  -->
+						</ul>
+					</li>
+					<li class="sub-title">Clínicas</li>
+					<li>
+						<ul>
+							<li><a href="/infraestrutura/clinicas/odontologia">Odontologia</a></li>
+							<li><a href="/infraestrutura/clinicas/psicologia">Psicologia</a></li>
+						</ul>
+					</li>
+					<li class="space"><a href="/infraestrutura/laboratorios">Laboratórios</a></li>
+					<li><a href="/infraestrutura/nucleo-de-pratica-juridica">Núcleo de Prática Jurídica</a></li>
+				</ul>
+			</div>
+			<div class="span2">
+				<ul>
+					<li class="header">Cursos</li>
+					<li><a href="/graduacao">Graduação</a></li>
+					<li><a href="/pos-graduacao">Pós-graduação</a></li>
+					<li><a href="/extensao">Cursos de Extensão</a></li>
+					<li><a href="/superior-de-tecnologia">Superior de Tecnologia</a></li>
+					<li><a href="/educacao-a-distancia">Educação a Distância</a></li>
+				</ul>
+			</div>
+			<div class="span2">
+				<ul>
+					<li class="header">Como Ingressar</li>
+					<li><a href="/como-ingressar/processo-seletivo">Processo Seletivo</a></li>
+					<!-- <li><a href="http://vest.faesa.br/">Processo Seletivo</a></li> -->
+					<li><a href="/como-ingressar/politica-beneficios">Política de Benefícios</a></li>
+					<li><a href="/como-ingressar/financiamento-estudantil">Financiamento Estudantil</a></li>
+				</ul>
+			</div>
+			<div class="span2">
+				<ul>
+					<li class="header">Pesquisa, Extensão e Cultura</li>
+					<li><a href="/pesquisa-extensao-e-cultura/apresentacao">Apresentação</a></li>
+					<li><a href="/pesquisa-extensao-e-cultura/projetos">Projetos</a></li>
+					<li><a href="/pesquisa-extensao-e-cultura/revista-faesa">Revistas FAESA</a></li>
+				</ul>
+			</div>
+			<div class="span2">
+				<ul>
+					<li class="header"><a href="/noticias">Notícias</a></li>
+					<li class="sub-title">Eventos</li>
+					<li><a href="http://www.faesa.br/corrida" target='_blank'>Corrida Faesa</a></li>
+					<li><a href="http://faesa.br/conenco" target='_blank'>CONENCO</a></li>
+					<li><a href="http://servicos.faesa.br/jornada" target='_blank'>Jornada Científica</a></li>
+					<li class="sub-title">Aluno</li>
+					<li><a href="http://portal.faesa.br/aluno/nucleo-de-atendimento-ao-aluno">Atendimento ao Aluno </a></li>
+					<li><a href="http://aluno.faesa.br/" target='_blank'>Central do Aluno</a></li>					
+					<li class="space"><a href="/nucleo-de-carreiras">Núcleo de Carreiras</a></li>
+					<li><a href="/fale-conosco">Fale Conosco</a></li>
+					<li><a href="http://webmail.faesa.br" target='_blank'>Webmail</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid content-general footer-mantener">
+	<div class="container">
+		<div class="row-fluid">
+			<div class="span3">
+				<a href="/mantenedoras/faculdades-integradas-espirito-santense" class="btn general"><span class="b-g-tl g2"></span><span class="b-g-bl g2"></span><span class="b-g-tr g2"></span><span class="b-g-br g2"></span><b>Fundação de Assistência e Educação</b> <br />Faculdades Integradas Espírito-Santenses</a>
+			</div>
+			<div class="span3">
+				<a href="/mantenedoras/faculdades-integradas-sao-pedro" class="btn general"><span class="b-g-tl g2"></span><span class="b-g-bl g2"></span><span class="b-g-tr g2"></span><span class="b-g-br g2"></span><b>Associação Educacional de Vitória</b><br /> Faculdades Integradas São Pedro</a>
+			</div>
+			<div class="span3">
+				<a href="/mantenedoras/faculdades-espirito-santense" class="btn general"><span class="b-g-tl g2"></span><span class="b-g-bl g2"></span><span class="b-g-tr g2"></span><span class="b-g-br g2"></span><b>União Capixaba de Ensino</b><br /> Faculdades Espírito-Santenses</a>
+			</div>
+			<div class="span3">
+				<a href="http://www.cetfaesa.com.br/" target='_blank' class="btn general"><span class="b-g-tl g2"></span><span class="b-g-bl g2"></span><span class="b-g-tr g2"></span><span class="b-g-br g2"></span><b>Associação de Assistência ao Ensino</b><br /> CET-FAESA</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid content-general footer-media">
+	<div class="container">
+		<div class="row-fluid">
+				<div class="group-footer-selos pull-left">
+					<div class="pull-left"><img src="http://portal.faesa.br/lay/footer-logo-faesa.gif" border="0" alt="Faesa" title="Faesa" /></div>
+					<span class="divider-vertical pull-left"></span>
+					<p class="pull-left">© 2013 FAESA. Todos os direitos reservados.</p>
+					<span class="divider-vertical pull-left"></span>
+					<div class="pull-left"><img src="http://portal.faesa.br/lay/footer-selo1.gif" border="0" /></div>
+					<div class="pull-left"><img src="http://portal.faesa.br/lay/footer-selo2.gif" border="0" /></div>
+					<div class="pull-left"><img src="http://portal.faesa.br/lay/footer-selo3.gif" border="0" /></div>
+				</div>
+				<div class="group-social-media pull-right" id='menu-redes-rodape'>
+					<a class="btn general social-media" href="https://www.facebook.com/faesaoficial?fref=ts" target='_blank' data-rede="facebook">
+						<span class="b-w-tl"></span><span class="b-w-bl"></span><span class="b-w-tr"></span><span class="b-w-br"></span>
+						<img src="http://portal.faesa.br/lay/icon-facebook.png"  />
+					</a>
+					<a class="btn general social-media" href="https://twitter.com/faesa_oficial" target='_blank' data-rede="twitter">
+						<span class="b-w-tl"></span><span class="b-w-bl"></span><span class="b-w-tr"></span><span class="b-w-br"></span>
+						<img src="http://portal.faesa.br/lay/icon-twitter.png"  />
+					</a>
+					<a class="btn general social-media" href="http://www.youtube.com/user/faesaoficial" target='_blank' data-rede="youtube">
+						<span class="b-w-tl"></span><span class="b-w-bl"></span><span class="b-w-tr"></span><span class="b-w-br"></span>
+						<img src="http://portal.faesa.br/lay/icon-youtube.png"  />
+					</a>
+					<a class="btn general social-media" href="http://www.linkedin.com/company/491552?trk=tyah" target='_blank' data-rede="linkedin">
+						<span class="b-w-tl"></span><span class="b-w-bl"></span><span class="b-w-tr"></span><span class="b-w-br"></span>
+						<img src="http://portal.faesa.br/lay/icon-linkedin.png"  />
+					</a>
+					<span class="divider-vertical" style="float: left; margin: 10px 14px 0 10px;"></span>
+					<a class="btn general ombudsman botao-ouvidoria" href="http://portal.faesa.br/fale-conosco/ouvidoria">
+						<span class="b-w-tl"></span><span class="b-w-bl"></span><span class="b-w-tr"></span><span class="b-w-br"></span>
+						<span class="ico-ombudsman"><img src="http://portal.faesa.br/lay/icon-audition.png"  /></span> 
+						<span class="text-left">Ouvidoria</span>
+					</a>
+					
+					<script>
+					$(function(){
+							$('#menu-redes-rodape a[data-rede]').click(function(){
+								var rede=$(this).attr('data-rede');
+								ga('send', 'event', 'Botões Redes Sociais Rodape', 'Click '+rede );
+							});
+						});
+					</script>
+					
+				</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid" style="background: #f5f5f5;border-top: 1px solid #ddd;">
+	<div class="container">
+	<p style="font-size: 11px; text-align: right;padding-top: 10px; color:#999;">Desenvolvido por <a href="http://www.setcomunicacao.com.br" target="_blank" style="color:#c00418;">(set)</a></p>
+	</div>
+</div>
+   <script>
+		            	
+		$('.menu-produtos').click(function(){
+			
+			window.location.href=$(this).attr('href');
+			
+			return false;
+			
+		});
+		
+		$('.goto-link').click(function(){
+			
+			if($(this).attr('target')=='_self'){
+				window.location.href=$(this).attr('href');
+			}else{
+				window.open($(this).attr('href'));
+			}
+			
+			return false;
+			
+		});
+		
+		function fix_height(element){
+			var max=0;
+			element.find('ul').each(function(index,item){
+				if($(item).height() > max){
+					max =$(item).height();
+				};
+			});
+			element.find('ul').css('min-height',max);
+		}
+		
+		function fix_menu(){
+			$('.menu_height_fixer').each(function(index,item){
+				
+				fix_height($(item));
+				
+			});
+		}
+		
+		$(function(){
+
+			fix_menu();
+			
+			$('.menu_height_fixer ul').append('<li style="height:50px"></li>');
+		
+			$('.botao-ouvidoria').click(function(){
+
+				abre_ouvidoria();
+				
+				return false;
+			});
+							
+			
+		});
+		
+	</script>
+
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42973304-1', 'faesa.br');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Código do Google para tag de remarketing -->
+<!--------------------------------------------------
+As tags de remarketing não podem ser associadas a informações pessoais de identificação nem inseridas em páginas relacionadas a categorias de confidencialidade. Veja mais informações e instruções sobre como configurar a tag em: http://google.com/ads/remarketingsetup
+--------------------------------------------------->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 985824385;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/985824385/?value=0&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+	
+	
+</body>
+</html>

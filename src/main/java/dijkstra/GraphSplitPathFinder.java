@@ -59,7 +59,7 @@ public class GraphSplitPathFinder {
         VertexWithEdge minConnection = null;
         for (VertexWithEdge connection: connections) {
             Graph destinationGraph = connectionToRegion.get(connection);
-            double connectionCost = connection.getEdge().getValue();
+            double connectionCost = (double)connection.getEdge().getValue();
             if (destinationGraph == region2 && minCost > connectionCost) {
                 minCost = connectionCost;
                 minConnection = connection;

@@ -23,7 +23,7 @@ public class Path {
 	public double getCost() {
 	    double s = 0.0;
 	    for (Edge e: edges) {
-	        s += e.getValue();
+	        s += (double)e.getValue();
 	    }
 	    
 	    return s;
